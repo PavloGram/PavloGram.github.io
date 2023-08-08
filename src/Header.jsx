@@ -1,5 +1,6 @@
 
 import Form from './Form';
+import MenuList from './MenuList';
 import headerMob from './images/header/header-bg-mob.jpg';
 import { styled } from "styled-components";
 
@@ -34,6 +35,7 @@ function Header() {
       <HeaderContainer>
        
         <Navi>
+          <MenuList/>
        <Form/>
        </Navi>  
       </HeaderContainer>
