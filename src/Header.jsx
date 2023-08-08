@@ -1,17 +1,43 @@
+
+import Form from './Form';
+import headerMob from './images/header/header-bg-mob.jpg';
+import { styled } from "styled-components";
+
+const HeaderContainer = styled.header`
+width: 280px;
+height: 460px;
+padding-left: 20px;
+padding-right: 20px;
+background-image: url( ${headerMob});
+background-position: center;
+background-repeat: no-repeat;
+background-size: auto;
+border-radius: 10px;
+
+` 
+const Navi = styled.nav`
+display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  
+  padding: 14px 14px 20px 14px;
+  // padding-left: 14px;
+  // padding-right: 14px;
+`
+
+
+
+
 function Header() {
   return (
-    <header>
-      <div>
-        <form>
-            <input type="text" placeholder="Movie search"></input>
-            <button type="submit"></button>
-        </form>
-        <div >
-                <p>We couldn't find the movie</p>
-                 <p>Please try another value</p>
-              </div>
-      </div>
-    </header>
+   
+      <HeaderContainer>
+       
+        <Navi>
+       <Form/>
+       </Navi>  
+      </HeaderContainer>
+   
   );
 }
 export default Header;
