@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
  
  const GlobalStyle = createGlobalStyle`
+ 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
@@ -9,6 +10,7 @@ import { createGlobalStyle } from "styled-components";
 
 
 html {
+  height: 100%;
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
 }
@@ -21,6 +23,8 @@ html {
  */
 
 body {
+  
+  height: 100%;
   font-family: 'Roboto', sans-serif;
   margin: 0;
 }
@@ -28,6 +32,7 @@ body {
 
 
 main {
+  // flex: 1 1 auto;
   display: block;
 }
 

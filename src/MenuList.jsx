@@ -19,7 +19,7 @@ text-transform: uppercase;
 background: white;
 color: inherit;
 margin-right: 4px;
-padding: ${props => props.home !== 'false' ? '10px 26px 10px 26px' : '10px 22px 10px 22px'} ; 
+padding: 10px 22px 10px 22px ; 
 border-radius: 100px;
 
 font-size: 12px;
@@ -33,7 +33,7 @@ line-height: normal;
     color: white;
 }
 `
-
+// ${props => props.homer !== 'false' ? '10px 26px 10px 26px' : '10px 22px 10px 22px'}
 
 
 
@@ -45,10 +45,10 @@ function MenuList (){
     return(
      <MenuListStyle>
       <ListItemStyle>
-        <ItemStyle home='true' href="/index.html">home</ItemStyle>
+        <ItemStyle  href="/index.html">home</ItemStyle>
       </ListItemStyle>
       <ListItemStyle>
-        <ItemStyle home='false' href="№">my library</ItemStyle>
+        <ItemStyle  href="№">my library</ItemStyle>
         </ListItemStyle>
      </MenuListStyle>
 
