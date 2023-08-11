@@ -1,7 +1,8 @@
 import { styled } from "styled-components"
 
 const FooterContainer = styled.footer`
-
+margin-right: auto;
+margin-left: auto;
 background: #F7F7F7;
 width: 280px;
 `

@@ -18,6 +18,11 @@ display: none;
 color: white;
 `
 const SearchInput = styled.input`
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 1.17;
+color: #000000;
 // width: 100%;
 width: 220px;
 // height: 42px;
@@ -35,12 +40,7 @@ outline: none;
     font-size: 12px;
     line-height: 1.17;
     color: #000000;
-    @media screen and (min-width: $table-width) {
-      @media screen and (min-width: $table-width) {
-        font-size: 14px;
-        line-height: 1.14;
-      }
-    }
+  
  }
 
 

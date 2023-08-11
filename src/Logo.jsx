@@ -2,7 +2,8 @@ import { styled } from 'styled-components';
 import logoImage from './images/header/logoo.svg'
 
 const HeaderLogo = styled.div`
-margin-top: 290px;
+margin-top: 294px;
+
 display: flex;
 align-items: center;
 justify-content: center;

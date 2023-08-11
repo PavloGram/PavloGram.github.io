@@ -9,12 +9,7 @@ min-height: 100vh;
 display: flex;
 flex-direction: column;
 `
-// const wrap = {
-//   height: '100vh',
-// minHeight: '100vh',
-// display: 'flex',
-// flexDirection: 'column'
-// }
+
 
 function App() {
   return (

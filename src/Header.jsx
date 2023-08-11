@@ -8,6 +8,8 @@ import { styled } from "styled-components";
 const HeaderContainer = styled.header`
 width: 280px;
 height: 460px;
+margin-right: auto;
+margin-left: auto;
 
 // padding-left: 20px;
 // padding-right: 20px;
