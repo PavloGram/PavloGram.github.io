@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import fetchFilms from './fetchFilms';
 import { styled } from 'styled-components';
 import { genres } from './data/genres';
+import candyCane from './images/candy-cane.jpg'
 
 const CardList = styled.ul`
 margin-top: 20px;
@@ -80,7 +81,8 @@ function CardContainer() {
         <CardItem key={el.id}>
           <CardThumb>
             <CardImage
-              src={`https://image.tmdb.org/t/p/w500${el.poster_path}`}
+             
+              src={el.poster_path ? `https://image.tmdb.org/t/p/w500${el.poster_path}` : candyCane }
             />
             <CardTitle>{el.title}</CardTitle>
             <CardDiscriptionBlock>
