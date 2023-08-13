@@ -12,7 +12,7 @@ margin-left: auto;
   flex: 1 1 auto;
 `
 
-function Main() {
-  return <MainContainer><CardContainer/></MainContainer>;
+function Main({film, setFilm}) {
+  return <MainContainer><CardContainer film={film} setFilm={setFilm} /></MainContainer>;
 }
 export default Main;

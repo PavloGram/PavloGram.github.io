@@ -1,5 +1,7 @@
 import { styled } from "styled-components"
 import searchImg from './images/header/search.svg'
+import { useState } from "react"
+import fetchFilms from "./fetchFilms"
 
 
 
@@ -62,12 +64,33 @@ height: 14px;
 `
 
 
-function Form(){
+function Form({setFilm}){
+  const [value, setValue] = useState('')
+
+  function hanleChange(e){
+  e.preventDefault()
+  console.log(value)
+
+  fetchFilms(value)
+  .then(res => {
+    console.log(res.results);
+    return setFilm(res.results);
+  })
+  .catch(er => {
+    console.log(er.message);
+  });
+  }
+  
+  function changeInput(e){
+    setValue(e.target.value)
+  // console.log(e.target.value)
+  }
+
     return(
      <>
      <SearchForm>
-          <SearchInput type="text" placeholder="Movie search"></SearchInput>
-          <Button type="submit"><SearchImg src={searchImg}  alt="search"/></Button>
+          <SearchInput type="text" onChange={changeInput} name='searchInput' placeholder="Movie search"></SearchInput>
+          <Button type="submit" onClick={hanleChange}><SearchImg src={searchImg}  alt="search"/></Button>
         </SearchForm>
        
           <WarningText>We couldn't find the movie <br/>

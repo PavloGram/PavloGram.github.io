@@ -34,14 +34,14 @@ display: flex;
 
 
 
-function Header() {
+function Header({setFilm}) {
   return (
    
       <HeaderContainer>
        
         <Navi>
        <MenuList />
-       <Form/>
+       <Form setFilm={setFilm}/>
        </Navi>  
        <Logo/>
       </HeaderContainer>
