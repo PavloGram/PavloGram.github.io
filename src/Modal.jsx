@@ -1,7 +1,10 @@
 import { css, styled } from 'styled-components';
 import candyCane from './images/candy-cane.jpg';
 import closeIcon from './images/close.svg';
-import { genres } from './data/genres';
+// import { genres } from './data/genres';
+// import { useEffect, useState } from 'react';
+import ModalGenres from './ModalGenres';
+import Button from './Button';
 
 const ModalContainer = styled.div`
   height: 100vh;
@@ -91,6 +94,7 @@ const ModalFilmDetailTr = styled.tr`
 display: flex;
 align-items: flex-start;
 word-break: break-all;
+margin-bottom: 8px;
 
 `
 const ModalFilmDetailTb = styled.td`
@@ -110,9 +114,41 @@ font-style: normal;
 font-weight: 500;
 line-height: 16px;
 `
+const ModalDiscriptionTitle = styled.h3`
+margin:  12px 0 8px 0;
+font-size: 12px;
+font-style: normal;
+font-weight: 500;
+line-height: 16px; /* 133.333% */
+text-transform: uppercase;
+`
+const ModalDiscriptionText = styled.p`
+font-size: 12px;
+font-style: normal;
+font-weight: 500;
+line-height: 20px; 
+margin-bottom: 30px;
+`
+
+const ModalUc = styled.span`
+text-transform: uppercase;
+`
+const ModalRedBg = styled.span`
+color: white;
+background-color: #B92F2C;
+
+border-radius: 5px;
+padding: 1px 8px 1px 9px;
+margin-right: 4px;
+`
+
 
 function Modal({ active, setActive, currentFilm }) {
-   let gen = [] 
+
+   
+ 
+   
+ 
   function changeActive() {
     setActive(!active);
   }
@@ -139,8 +175,8 @@ function Modal({ active, setActive, currentFilm }) {
                 <ModalFilmDetailTitle>Vote / Votes</ModalFilmDetailTitle>
               </ModalFilmDetailTb>
               <ModalFilmDetailTb>               
-                <ModalFilmDetailDiscription>{`${Number(currentFilm.vote_average).toFixed(1)} / ${currentFilm.vote_count
-}`}</ModalFilmDetailDiscription>
+                <ModalFilmDetailDiscription><ModalRedBg>{Number(currentFilm.vote_average).toFixed(1)} </ModalRedBg>/ {currentFilm.vote_count
+}</ModalFilmDetailDiscription>
               </ModalFilmDetailTb>
             </ModalFilmDetailTr>
             <ModalFilmDetailTr>
@@ -156,7 +192,7 @@ function Modal({ active, setActive, currentFilm }) {
                 <ModalFilmDetailTitle>Original Title</ModalFilmDetailTitle>
               </ModalFilmDetailTb>
               <ModalFilmDetailTb>               
-                <ModalFilmDetailDiscription>{currentFilm.original_title}</ModalFilmDetailDiscription>
+                <ModalFilmDetailDiscription><ModalUc>{currentFilm.original_title}</ModalUc></ModalFilmDetailDiscription>
               </ModalFilmDetailTb>
             </ModalFilmDetailTr>
             <ModalFilmDetailTr>
@@ -164,15 +200,16 @@ function Modal({ active, setActive, currentFilm }) {
                 <ModalFilmDetailTitle>Genre</ModalFilmDetailTitle>
               </ModalFilmDetailTb>
               <ModalFilmDetailTb>               
-                <ModalFilmDetailDiscription>{genres
-                  .filter(e => {
-                    if (currentFilm.genre_ids.includes(e.id)) {
-                      return gen.push[e];
-                    }
-                  })}</ModalFilmDetailDiscription>
+                <ModalFilmDetailDiscription>
+                <ModalGenres currentFilmGenre_ids={currentFilm.genre_ids}/>
+                </ModalFilmDetailDiscription>
               </ModalFilmDetailTb>
             </ModalFilmDetailTr>
           </ModalFilmDetailTable>
+         <ModalDiscriptionTitle>About</ModalDiscriptionTitle>
+         <ModalDiscriptionText>{currentFilm.overview}</ModalDiscriptionText>
+         <Button>Add to watched</Button>
+         <Button>Add to queue</Button>
         </ModalDiscription>
       </ModalContent>
     </ModalContainer>

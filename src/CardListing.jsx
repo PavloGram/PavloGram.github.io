@@ -8,6 +8,7 @@ import { genres } from './data/genres';
 
 
 
+
 const CardList = styled.ul`
   margin-top: 20px;
   margin-bottom: 20px;
@@ -73,13 +74,16 @@ const CardDiscriptionBlock = styled.div`
 `;
 
 function CardListing({ filmInfo, setActive, setCurrentFilm, isActivModal }) {
+
+
   
-  // const [isActivModal, setIsActivModal] = useState(true)
+
   return (
     <>
     <CardList>
       {filmInfo.map(el => (
-        <CardItem key={el.id}  onClick={() => {setCurrentFilm(el); setActive(!isActivModal)}} >
+       
+        <CardItem key={el.id}   onClick={() => {setCurrentFilm(el); setActive(!isActivModal)}} >
           <CardThumb>
             <div>
               <CardImage
@@ -93,18 +97,24 @@ function CardListing({ filmInfo, setActive, setCurrentFilm, isActivModal }) {
             <CardTitle>{el.title}</CardTitle>
             <CardDiscriptionBlock>
               <CardDiscriptionList>
-                {genres
+                {  genres
                   .filter(e => {
                     if (el.genre_ids.includes(e.id)) {
-                      return e;
+                      return e
+                    } else {
+                      
+                    return null
                     }
                   })
                   .slice(0, 2)
                   .map((et, index) => (
                     <CardDiscriptionItem key={et.id}>
                       <CardDiscriptionText>
-                         
-                           { index !== 1  ? `${et.genre},` : `${et.genre} |`    }
+                        {}
+                      { index !== 1  ? `${et.genre},` : `${et.genre} |`    }
+                        {/* {  index === 2 || count.length === 1? `${et.genre},` : `${et.genre} |`  } */}
+                         {/* {arr - genres.length === 2  ?  `${et.genre},` : `${et.genre} |`} */}
+                           {/* { arr.length === 3  && 1 === 2 ? `${et.genre},` : `${et.genre} |`    } */}
                          </CardDiscriptionText>
                     </CardDiscriptionItem>
                   ))}
