@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import fetchFilms from './fetchFilms';
 // import candyCane from './images/candy-cane.jpg'
 
@@ -66,7 +66,7 @@ import CardListing from './CardListing';
 // `;
 
 
-function CardContainer({film, setFilm}) {
+function CardContainer({film, setFilm, setActive, setCurrentFilm, isActivModal}) {
   
 
   useEffect(() => {
@@ -114,7 +114,7 @@ function CardContainer({film, setFilm}) {
   </CardItem>
 ))}
 </CardList> */}
-<CardListing filmInfo={film}></CardListing>
+<CardListing filmInfo={film} setActive={setActive} isActivModal={isActivModal}  setCurrentFilm={setCurrentFilm}></CardListing>
 </>)
   ;
 }

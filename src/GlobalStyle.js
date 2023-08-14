@@ -7,7 +7,11 @@ import { createGlobalStyle } from "styled-components";
 /* Document
    ========================================================================== */
 
-
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 html {
   height: 100%;

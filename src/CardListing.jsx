@@ -6,6 +6,8 @@ import { genres } from './data/genres';
 
 
 
+
+
 const CardList = styled.ul`
   margin-top: 20px;
   margin-bottom: 20px;
@@ -14,6 +16,15 @@ const CardList = styled.ul`
 const CardItem = styled.li`
   list-style-type: none;
   margin-bottom: 20px;
+  opacity:1;
+
+  :hover{
+  cursor: pointer;
+  opacity: 0.9;
+  transition: opacity 0.2s ease-out;
+
+  
+  }
 `;
 const CardThumb = styled.div`
   // padding-bottom: 20px;
@@ -61,11 +72,14 @@ const CardDiscriptionBlock = styled.div`
   display: flex;
 `;
 
-function CardListing({ filmInfo }) {
+function CardListing({ filmInfo, setActive, setCurrentFilm, isActivModal }) {
+  
+  // const [isActivModal, setIsActivModal] = useState(true)
   return (
+    <>
     <CardList>
       {filmInfo.map(el => (
-        <CardItem key={el.id}>
+        <CardItem key={el.id}  onClick={() => {setCurrentFilm(el); setActive(!isActivModal)}} >
           <CardThumb>
             <div>
               <CardImage
@@ -89,19 +103,22 @@ function CardListing({ filmInfo }) {
                   .map((et, index) => (
                     <CardDiscriptionItem key={et.id}>
                       <CardDiscriptionText>
-                        {index !== 1 ? `${et.genre},` : et.genre}{' '}
-                      </CardDiscriptionText>
+                         
+                           { index !== 1  ? `${et.genre},` : `${et.genre} |`    }
+                         </CardDiscriptionText>
                     </CardDiscriptionItem>
                   ))}
               </CardDiscriptionList>
               <CardDiscriptionText>
-                | {el.release_date.slice(0, 4)}
+                {el.release_date &&  el.release_date.slice(0, 4)}
               </CardDiscriptionText>
             </CardDiscriptionBlock>
           </CardThumb>
         </CardItem>
       ))}
     </CardList>
+    {/* <Modal active={isActivModal} setActive={setIsActivModal}></Modal> */}
+    </>
   );
 }
 
