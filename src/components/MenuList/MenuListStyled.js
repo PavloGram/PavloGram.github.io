@@ -1,7 +1,7 @@
 import { styled } from "styled-components"
 
 
-const MenuListStyle = styled.ul`
+export const MenuListStyle = styled.ul`
 display: flex;
 flex-direction: row;
 list-style-type: none;
@@ -9,10 +9,10 @@ padding-left: 0;
 margin: 0 -8px 8px 0;
 `
 
-const ListItemStyle = styled.li`
+export const ListItemStyle = styled.li`
 
 `
-const ItemStyle = styled.a`
+export const ItemStyle = styled.a`
 display: block;
 text-decoration: none;
 text-transform: uppercase;
@@ -35,24 +35,3 @@ line-height: normal;
 `
 // ${props => props.homer !== 'false' ? '10px 26px 10px 26px' : '10px 22px 10px 22px'}
 
-
-
-
-function MenuList (){
-
-
-
-    return(
-     <MenuListStyle>
-      <ListItemStyle>
-        <ItemStyle  href="/index.html">home</ItemStyle>
-      </ListItemStyle>
-      <ListItemStyle>
-        <ItemStyle  href="№">my library</ItemStyle>
-        </ListItemStyle>
-     </MenuListStyle>
-
-    )
-}
-
-export default MenuList

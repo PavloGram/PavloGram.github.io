@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import fetchFilms from './fetchFilms';
-import CardListing from './CardListing';
+import fetchFilms from '../../js/fetchFilms';
+import CardListing from '../CardListing/CardListing';
 
 
 

@@ -1,6 +1,6 @@
-import { styled } from "styled-components"
+import { styled } from "styled-components";
 
-const ButtonStyle = styled.button`
+export const ButtonStyle = styled.button`
 
 color: #B92F2C;
 text-align: center;
@@ -21,9 +21,3 @@ margin-right: 4px;
     color: #FFF;
 }
 ` 
-
-function Button ({text, change}){
-    return(<ButtonStyle onClick={change} type="button">{text}</ButtonStyle>)
-}
-
-export default Button

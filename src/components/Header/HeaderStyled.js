@@ -1,11 +1,7 @@
-
-import Form from './Form';
-import Logo from './Logo';
-import MenuList from './MenuList';
-import headerMob from './images/header/header-bg-mob.jpg';
+import headerMob from '../..//images/header/header-bg-mob.jpg';
 import { styled } from "styled-components";
 
-const HeaderContainer = styled.header`
+export const HeaderContainer = styled.header`
 width: 280px;
 height: 460px;
 margin-right: auto;
@@ -21,7 +17,7 @@ border-radius: 10px;
 // padding: 14px 14px 20px 14px;
 
 ` 
-const Navi = styled.nav`
+export const Navi = styled.nav`
 display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -30,22 +26,3 @@ display: flex;
   // padding-left: 14px;
   // padding-right: 14px;
 `
-
-
-
-
-function Header({setFilm}) {
-  return (
-   
-      <HeaderContainer>
-       
-        <Navi>
-       <MenuList />
-       <Form setFilm={setFilm}/>
-       </Navi>  
-       <Logo/>
-      </HeaderContainer>
-   
-  );
-}
-export default Header;

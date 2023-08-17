@@ -1,10 +1,10 @@
-import Header from "./Header";
-import Footer from "./Footer";
-import Main from "./Main";
-import GlobalStyle from "./GlobalStyle";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import Main from "./components/Main/Main";
+import GlobalStyle from "./js/GlobalStyle";
 import { styled } from "styled-components";
 import { useState } from "react";
-import Modal from "./Modal";
+import Modal from "./components/Modal/Modal";
 
 const Wrapper = styled.div`
 min-height: 100vh;
