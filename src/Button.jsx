@@ -16,14 +16,14 @@ cursor: pointer;
 margin-right: 4px;
 
 
-:hover{
+&:hover{
     background-color: #B92F2C;
     color: #FFF;
 }
 ` 
 
-function Button ({children}){
-    return(<ButtonStyle type="button">{children}</ButtonStyle>)
+function Button ({text, change}){
+    return(<ButtonStyle onClick={change} type="button">{text}</ButtonStyle>)
 }
 
 export default Button

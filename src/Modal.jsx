@@ -5,6 +5,16 @@ import closeIcon from './images/close.svg';
 // import { useEffect, useState } from 'react';
 import ModalGenres from './ModalGenres';
 import Button from './Button';
+import { useEffect, useState } from 'react';
+
+const LOCAL_STORAGE_WATCHED_KEY = "watched";
+const LOCAL_STORAGE_QUEUE_KEY = 'queue';
+
+let watchetArrey = []
+let queueArrey = []
+localStorage.setItem(LOCAL_STORAGE_WATCHED_KEY, watchetArrey)
+localStorage.setItem(LOCAL_STORAGE_QUEUE_KEY, queueArrey)
+
 
 const ModalContainer = styled.div`
   height: 100vh;
@@ -22,7 +32,7 @@ const ModalContainer = styled.div`
   transition: 0.5s;
 
   ${props =>
-    props.active &&
+    props.$active &&
     css`
       opacity: 1;
       pointer-events: all;
@@ -30,14 +40,14 @@ const ModalContainer = styled.div`
 `;
 const ModalContent = styled.div`
   width: 280px;
-
+margin-right: 17px;
   padding: 48px 20px 40px 20px;
   background-color: white;
   transform: scale(0.5);
   transition: 0.4s transform;
 
   ${props =>
-    props.active &&
+    props.$active &&
     css`
       opacity: 1;
       pointer-events: all;
@@ -85,19 +95,19 @@ const ModalTitle = styled.h2`
   line-height: normal;
   text-transform: uppercase;
 `;
-const ModalFilmDetailTable = styled.tbody`
+const ModalFilmDetailTable = styled.div`
 border-collapse:separate;
 border-spacing: 0;
 
 `;
-const ModalFilmDetailTr = styled.tr`
+const ModalFilmDetailTr = styled.div`
 display: flex;
 align-items: flex-start;
 word-break: break-all;
 margin-bottom: 8px;
 
 `
-const ModalFilmDetailTb = styled.td`
+const ModalFilmDetailTb = styled.div`
 word-break: break-all;
 width: 110px;
 `
@@ -107,7 +117,8 @@ font-family: Roboto;
 font-size: 12px;
 font-style: normal;
 font-weight: 500;
-line-height: 16px; /* 133.33`
+line-height: 16px; /* 133.33
+`
 const ModalFilmDetailDiscription = styled.p`
 font-size: 12px;
 font-style: normal;
@@ -138,14 +149,30 @@ color: white;
 background-color: #B92F2C;
 
 border-radius: 5px;
-padding: 1px 8px 1px 9px;
+padding: 1px 7px 1px 10px;
 margin-right: 4px;
 `
 
 
 function Modal({ active, setActive, currentFilm }) {
+  const [watched, setWatched ] = useState(false)
+  const [queue, setQueue ] = useState(false)
+   watchetArrey = localStorage.getItem(LOCAL_STORAGE_WATCHED_KEY)
+   queueArrey = localStorage.getItem(LOCAL_STORAGE_QUEUE_KEY)
 
+
+
+  function handleChangeWatchedList(){
+   localStorage.setItem(LOCAL_STORAGE_WATCHED_KEY, JSON.stringify(currentFilm.id))
    
+    console.log(localStorage.getItem(LOCAL_STORAGE_WATCHED_KEY))
+  }
+   
+  function handleChangeQueueList(){
+    localStorage.removeItem(LOCAL_STORAGE_WATCHED_KEY)
+    // localStorage.setItem(LOCAL_STORAGE_QUEUE_KEY, currentFilm.id)
+    console.log(currentFilm.id)
+  }
  
    
  
@@ -155,8 +182,8 @@ function Modal({ active, setActive, currentFilm }) {
 
   console.log(currentFilm);
   return (
-    <ModalContainer active={active} onClick={changeActive}>
-      <ModalContent active={active} onClick={e => e.stopPropagation()}>
+    <ModalContainer $active={active ? 1 : 0} onClick={changeActive}>
+      <ModalContent $active={active ? 1 : 0} onClick={e => e.stopPropagation()}>
         <ModalCloseBtn onClick={changeActive} type="button">
           <CloseModalBtn src={closeIcon}></CloseModalBtn>
         </ModalCloseBtn>
@@ -207,9 +234,9 @@ function Modal({ active, setActive, currentFilm }) {
             </ModalFilmDetailTr>
           </ModalFilmDetailTable>
          <ModalDiscriptionTitle>About</ModalDiscriptionTitle>
-         <ModalDiscriptionText>{currentFilm.overview}</ModalDiscriptionText>
-         <Button>Add to watched</Button>
-         <Button>Add to queue</Button>
+         {/* <ModalDiscriptionText>{currentFilm.overview}</ModalDiscriptionText> */}
+         <Button change={handleChangeWatchedList} text={`${watched ?` Rem` : `Add`} to watched`}></Button>
+         <Button change={handleChangeQueueList} text='Add to queue'></Button>
         </ModalDiscription>
       </ModalContent>
     </ModalContainer>
