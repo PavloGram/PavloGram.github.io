@@ -2,18 +2,13 @@
 
 
 function ModalGenres({ currentFilmGenre_ids }) {
- 
+ console.log(currentFilmGenre_ids);
   return (
-    <>
-      {/* {genres
-        .filter(e => {
-          if (currentFilmGenre_ids.includes(e.id)) {
-            return e;
-          }
-        }).map((et, index) => (
-          <p key={et.id}>{index + 1 !== currentFilmGenre_ids.length ? `${et.genre},` : `${et.genre}. `}</p>
-        ))} */}
-    </>
+    <ul>
+      {/* {currentFilmGenre_ids.map((el, i) => {
+      return <li><p>{currentFilmGenre_ids === i ? `${el}.` : `${el},`}</p></li>
+      })} */}
+    </ul>
   );
 }
 export default ModalGenres;

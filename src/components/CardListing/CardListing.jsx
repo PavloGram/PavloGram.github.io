@@ -50,11 +50,9 @@ function CardListing({ filmInfo, setActive, setCurrentFilm, isActivModal }) {
                     .map((et, index) => (
                       <CardDiscriptionItem key={et.id}>
                         <CardDiscriptionText>
-                          {}
-                          {index !== 1 ? `${et.genre},` : `${et.genre} |`}
-                          {/* {  index === 2 || count.length === 1? `${et.genre},` : `${et.genre} |`  } */}
-                          {/* {arr - genres.length === 2  ?  `${et.genre},` : `${et.genre} |`} */}
-                          {/* { arr.length === 3  && 1 === 2 ? `${et.genre},` : `${et.genre} |`    } */}
+                        {el.genre_ids.length !== 1 && index !== 1 ? `${et.genre},` : `${et.genre} |`}
+                           {/* {index !== 1 ? `${et.genre},` : `${et.genre} |`} */}
+                         
                         </CardDiscriptionText>
                       </CardDiscriptionItem>
                     ))}
@@ -73,3 +71,5 @@ function CardListing({ filmInfo, setActive, setCurrentFilm, isActivModal }) {
 }
 
 export default CardListing;
+
+

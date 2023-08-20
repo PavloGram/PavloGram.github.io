@@ -1,12 +1,28 @@
-import { ModalCloseBtn, ModalContainer, ModalContent, ModalDiscription, ModalDiscriptionText, ModalDiscriptionTitle,
-ModalFilmDetailDiscription, ModalFilmDetailTable, ModalFilmDetailTb, ModalFilmDetailTitle, ModalFilmDetailTr,
-ModalPoster, ModalRedBg, ModalTitle, ModalUc, CloseModalBtn } from './ModalStyles';
+import {
+  ModalCloseBtn,
+  ModalContainer,
+  ModalContent,
+  ModalDiscription,
+  ModalDiscriptionText,
+  ModalDiscriptionTitle,
+  ModalFilmDetailDiscription,
+  ModalFilmDetailTable,
+  ModalFilmDetailTb,
+  ModalFilmDetailTitle,
+  ModalFilmDetailTr,
+  ModalPoster,
+  ModalRedBg,
+  ModalTitle,
+  ModalUc,
+  CloseModalBtn,
+} from './ModalStyles';
 import candyCane from '../../images/candy-cane.jpg';
 import closeIcon from '../../images/close.svg';
 
 import ModalGenres from '../ModalGenres/ModalGenres';
 import Button from '../Button/Button';
 import { useEffect, useState } from 'react';
+import { genres } from '../../data/genres';
 
 const LOCAL_STORAGE_WATCHED_KEY = 'watched';
 const LOCAL_STORAGE_QUEUE_KEY = 'queue';
@@ -15,7 +31,6 @@ let watchetArrey = [];
 let queueArrey = [];
 localStorage.setItem(LOCAL_STORAGE_WATCHED_KEY, watchetArrey);
 localStorage.setItem(LOCAL_STORAGE_QUEUE_KEY, queueArrey);
-
 
 function Modal({ active, setActive, currentFilm }) {
   const [watched, setWatched] = useState(false);
@@ -42,7 +57,7 @@ function Modal({ active, setActive, currentFilm }) {
     setActive(!active);
   }
 
-  console.log(currentFilm);
+  // console.log(currentFilm);
   return (
     <ModalContainer $active={active ? 1 : 0} onClick={changeActive}>
       <ModalContent $active={active ? 1 : 0} onClick={e => e.stopPropagation()}>
@@ -99,6 +114,11 @@ function Modal({ active, setActive, currentFilm }) {
               <ModalFilmDetailTb>
                 <ModalFilmDetailDiscription>
                   <ModalGenres currentFilmGenre_ids={currentFilm.genre_ids} />
+                  
+      {currentFilm.genre_ids.map((el, i) => {
+      return <p>{currentFilm.genre_ids.length === i + 1 ? `${el}.` : `${el},`}</p>
+      })}
+    
                 </ModalFilmDetailDiscription>
               </ModalFilmDetailTb>
             </ModalFilmDetailTr>

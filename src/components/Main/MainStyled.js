@@ -8,5 +8,6 @@ justify-content: center;
 align-items: center;
 margin-right: auto;
 margin-left: auto;
-  flex: 1 1 auto;
+flex-grow: 1
+  // flex: 1 1 auto;
 `

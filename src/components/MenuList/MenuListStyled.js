@@ -13,6 +13,7 @@ export const ListItemStyle = styled.li`
 
 `
 export const ItemStyle = styled.a`
+
 display: block;
 text-decoration: none;
 text-transform: uppercase;

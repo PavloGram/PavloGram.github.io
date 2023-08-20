@@ -14,6 +14,12 @@ import { createGlobalStyle } from "styled-components";
 }
 
 html {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu72xKOzY.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
   height: 100%;
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
@@ -26,7 +32,9 @@ html {
  * Remove the margin in all browsers.
  */
 
+
 body {
+
   
   height: 100%;
   font-family: 'Roboto', sans-serif;
