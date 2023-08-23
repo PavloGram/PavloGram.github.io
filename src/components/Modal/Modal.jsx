@@ -14,15 +14,15 @@ import {
   ModalRedBg,
   ModalTitle,
   ModalUc,
-  CloseModalBtn,
-} from './ModalStyles';
+ } from './ModalStyles';
 import candyCane from '../../images/candy-cane.jpg';
-import closeIcon from '../../images/close.svg';
+
 
 import ModalGenres from '../ModalGenres/ModalGenres';
 import Button from '../Button/Button';
 import { useEffect, useState } from 'react';
 import { genres } from '../../data/genres';
+import CloseIcon from '../UI/CloseIcon/CloseIcon';
 
 const LOCAL_STORAGE_WATCHED_KEY = 'watched';
 const LOCAL_STORAGE_QUEUE_KEY = 'queue';
@@ -62,7 +62,7 @@ function Modal({ active, setActive, currentFilm }) {
     <ModalContainer $active={active ? 1 : 0} onClick={changeActive}>
       <ModalContent $active={active ? 1 : 0} onClick={e => e.stopPropagation()}>
         <ModalCloseBtn onClick={changeActive} type="button">
-          <CloseModalBtn src={closeIcon}></CloseModalBtn>
+          <CloseIcon/>
         </ModalCloseBtn>
         <ModalPoster
           src={
@@ -115,10 +115,10 @@ function Modal({ active, setActive, currentFilm }) {
                 <ModalFilmDetailDiscription>
                   <ModalGenres currentFilmGenre_ids={currentFilm.genre_ids} />
                   
-      {currentFilm.genre_ids.map((el, i) => {
+      {/* {currentFilm.genre_ids.map((el, i) => {
       return <p>{currentFilm.genre_ids.length === i + 1 ? `${el}.` : `${el},`}</p>
       })}
-    
+     */}
                 </ModalFilmDetailDiscription>
               </ModalFilmDetailTb>
             </ModalFilmDetailTr>

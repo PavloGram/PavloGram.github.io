@@ -1,16 +1,14 @@
-import { MenuListStyle, ListItemStyle, ItemStyle } from './MenuListStyled';
+import {MenuItemStyle, MenuLinkStyle, MenuListStyle} from './MenuListStyled';
 
 function MenuList() {
   return (
     <MenuListStyle>
-      <ListItemStyle>
-        <ItemStyle href="/index.html">home</ItemStyle>
-      </ListItemStyle>
-      <ListItemStyle>
-        <ItemStyle href="№">my library</ItemStyle>
-      </ListItemStyle>
+      <MenuItemStyle>
+        <MenuLinkStyle href="/index.html">home</MenuLinkStyle>
+      </MenuItemStyle>
+      <MenuItemStyle>
+        <MenuLinkStyle href="№">my library</MenuLinkStyle>
+      </MenuItemStyle>
     </MenuListStyle>
-  );
-}
-
-export default MenuList;
+  )}
+  ;export default MenuList;

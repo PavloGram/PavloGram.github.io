@@ -1,7 +1,7 @@
 import { styled } from "styled-components"
 
 
-export const Button = styled.button`
+const SearchFormButton = styled.button`
 position: absolute;
 right: 8px;
 top: 50%;
@@ -11,11 +11,11 @@ border: none;
 cursor: pointer;
 `
 
-export const WarningText = styled.p`
+const SearchFormWarningText = styled.p`
 display: none;
 color: white;
 `
-export const SearchInput = styled.input`
+const SearchFormInput = styled.input`
 font-style: normal;
 font-weight: 400;
 font-size: 12px;
@@ -43,7 +43,7 @@ outline: none;
 
 
 `
-export const SearchForm = styled.form`
+const SearchForm = styled.form`
 position: relative;
 display: flex;
 justify-content: center;
@@ -53,8 +53,4 @@ justify-content: center;
 // order: 2;
 
 `
-export const SearchImg = styled.img`
-padding-top: 4px;
-width: 14px;
-height: 14px;
-`
+export {SearchForm, SearchFormButton, SearchFormInput, SearchFormWarningText}

@@ -1,12 +1,12 @@
 import { styled } from "styled-components"
 
-export const FooterContainer = styled.footer`
+ const FooterContainer = styled.footer`
 margin-right: auto;
 margin-left: auto;
 background: #F7F7F7;
 width: 280px;
 `
-export const FootertText = styled.p`
+ const FootertText = styled.p`
 font-style: normal;
 font-weight: 400;
 font-size: 14px;
@@ -23,7 +23,9 @@ text-align: center;
 justify-content: center;
 color: #545454;
 `
-export const FooterLink = styled.a`
+ const FooterLink = styled.a`
 text-decoration: none;
 color: inherit;
 `
+
+export {FooterContainer, FooterLink, FootertText}

@@ -28,6 +28,7 @@ function CardListing({ filmInfo, setActive, setCurrentFilm, isActivModal }) {
             <CardThumb>
               <div>
                 <CardImage
+               loading="lazy"
                   src={
                     el.poster_path
                       ? `https://image.tmdb.org/t/p/w500${el.poster_path}`

@@ -2,12 +2,12 @@ import { styled } from "styled-components";
 
 
 
-export const CardList = styled.ul`
+const CardList = styled.ul`
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 0;
 `;
-export const CardItem = styled.li`
+const CardItem = styled.li`
   list-style-type: none;
   margin-bottom: 20px;
   opacity:1;
@@ -20,17 +20,17 @@ export const CardItem = styled.li`
   
   }
 `;
-export const CardThumb = styled.div`
+const CardThumb = styled.div`
   // padding-bottom: 20px;
 `;
-export const CardImage = styled.img`
+const CardImage = styled.img`
   display: block;
   width: 280px;
   height: 402px;
   border-radius: 5px 5px 5px 5px;
 `;
 
-export const CardTitle = styled.h2`
+const CardTitle = styled.h2`
   margin: 10px 0 0 0;
   color: #000000;
   display: flex;
@@ -40,18 +40,18 @@ export const CardTitle = styled.h2`
   line-height: 1.17;
 `;
 
-export const CardDiscriptionList = styled.ul`
+const CardDiscriptionList = styled.ul`
   margin: 0;
   padding: 0;
   display: flex;
 `;
-export const CardDiscriptionItem = styled.li`
+const CardDiscriptionItem = styled.li`
   list-style-type: none;
   margin: 0;
   padding: 0;
   // padding-left: 2px;
 `;
-export const CardDiscriptionText = styled.p`
+const CardDiscriptionText = styled.p`
   color: #b92f2c;
 
   font-size: 12px;
@@ -62,6 +62,8 @@ export const CardDiscriptionText = styled.p`
   margin: 0;
 `;
 
-export const CardDiscriptionBlock = styled.div`
+const CardDiscriptionBlock = styled.div`
   display: flex;
 `;
+ export {CardDiscriptionBlock, CardDiscriptionItem, CardDiscriptionList, CardDiscriptionText, CardImage,
+CardItem, CardList, CardThumb, CardTitle}

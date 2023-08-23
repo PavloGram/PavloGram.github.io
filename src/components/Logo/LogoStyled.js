@@ -1,17 +1,17 @@
 import { styled } from "styled-components"
 
-export const HeaderLogo = styled.div`
+const HeaderLogo = styled.div`
 margin-top: 294px;
 
 display: flex;
 align-items: center;
 justify-content: center;
 `
-export const LogoImgStyle = styled.img`
+const  HeaderLogoImgStyle = styled.img`
 padding-right: 8px;
 
 `
-export const LogoText = styled.p`
+const  HeaderLogoText = styled.p`
 color: #ffffff;
 
 text-align: center;
@@ -22,3 +22,4 @@ font-weight: 500;
 line-height: normal;
 margin: 0;
 `
+export {HeaderLogo, HeaderLogoImgStyle, HeaderLogoText}

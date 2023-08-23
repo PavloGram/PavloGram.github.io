@@ -1,7 +1,7 @@
 import { styled } from "styled-components"
 
 
-export const MenuListStyle = styled.ul`
+const MenuListStyle = styled.ul`
 display: flex;
 flex-direction: row;
 list-style-type: none;
@@ -9,10 +9,10 @@ padding-left: 0;
 margin: 0 -8px 8px 0;
 `
 
-export const ListItemStyle = styled.li`
+const MenuItemStyle = styled.li`
 
 `
-export const ItemStyle = styled.a`
+const MenuLinkStyle = styled.a`
 
 display: block;
 text-decoration: none;
@@ -36,3 +36,4 @@ line-height: normal;
 `
 // ${props => props.homer !== 'false' ? '10px 26px 10px 26px' : '10px 22px 10px 22px'}
 
+export {MenuItemStyle, MenuLinkStyle, MenuListStyle}

@@ -1,7 +1,9 @@
-import { SearchForm, SearchImg, SearchInput, Button, WarningText } from './FormStyled'
-import searchImg from '../../images/header/search.svg'
+import { SearchForm, SearchFormButton, SearchFormInput, SearchFormWarningText } from './FormStyled'
+// import searchImg from '../../images/header/search.svg'
+// import searchIcon from '../../images/icons.svg#icon-logo'
 import { useState } from "react"
 import fetchFilms from "../../js/fetchFilms"
+import SearchIcon from '../UI/SearchIcon/SearchIcon'
 
 
 
@@ -32,12 +34,12 @@ function Form({setFilm}){
     return(
      <>
      <SearchForm>
-          <SearchInput type="text" onChange={changeInput} name='searchInput' placeholder="Movie search"></SearchInput>
-          <Button type="submit" onClick={hanleChange}><SearchImg src={searchImg}  alt="search"/></Button>
+          <SearchFormInput type="text" onChange={changeInput} name='searchInput' placeholder="Movie search"></SearchFormInput>
+          <SearchFormButton type="submit" onClick={hanleChange}><SearchIcon></SearchIcon></SearchFormButton>
         </SearchForm>
        
-          <WarningText>We couldn't find the movie <br/>
-          Please try another value</WarningText>
+          <SearchFormWarningText>We couldn't find the movie <br/>
+          Please try another value</SearchFormWarningText>
         </>
     )
 }

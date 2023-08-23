@@ -1,7 +1,7 @@
 import { css, styled } from 'styled-components';
 
 
-export const ModalContainer = styled.div`
+ const ModalContainer = styled.div`
   height: 100vh;
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.5);
@@ -23,7 +23,7 @@ export const ModalContainer = styled.div`
       pointer-events: all;
     `}
 `;
-export const ModalContent = styled.div`
+ const ModalContent = styled.div`
   width: 280px;
   margin-right: 17px;
   padding: 48px 20px 40px 20px;
@@ -39,11 +39,11 @@ export const ModalContent = styled.div`
       transform: scale(1);
     `}
 `;
-export const ModalCloseBtn = styled.button`
+ const ModalCloseBtn = styled.button`
   position: absolute;
   top: 8px;
   right: 8px;
-
+ 
   display: flex;
   align-items: center;
   margin: 0;
@@ -58,20 +58,19 @@ export const ModalCloseBtn = styled.button`
   :hover {
     background-color: #b92f2c;
     border-radius: 5px;
+    // fill: #ffffff;
+    // stroke: #ffffff;
   }
 `;
-export const CloseModalBtn = styled.img`
-  width: 25px;
-  height: 25px;
-`;
-export const ModalPoster = styled.img`
+ 
+ const ModalPoster = styled.img`
   display: block;
   width: 240px;
   border-radius: 5px;
 `;
 
-export const ModalDiscription = styled.div``;
-export const ModalTitle = styled.h2`
+ const ModalDiscription = styled.div``;
+ const ModalTitle = styled.h2`
   margin: 20px 0 20px 0;
   font-size: 20px;
   font-style: normal;
@@ -79,21 +78,21 @@ export const ModalTitle = styled.h2`
   line-height: normal;
   text-transform: uppercase;
 `;
-export const ModalFilmDetailTable = styled.div`
+ const ModalFilmDetailTable = styled.div`
   border-collapse: separate;
   border-spacing: 0;
 `;
-export const ModalFilmDetailTr = styled.div`
+ const ModalFilmDetailTr = styled.div`
   display: flex;
   align-items: flex-start;
   word-break: break-all;
   margin-bottom: 8px;
 `;
-export const ModalFilmDetailTb = styled.div`
+ const ModalFilmDetailTb = styled.div`
   word-break: break-all;
   width: 110px;
 `;
-export const ModalFilmDetailTitle = styled.p`
+ const ModalFilmDetailTitle = styled.p`
 color: #8C8C8C;
 font-family: Roboto;
 font-size: 12px;
@@ -101,13 +100,13 @@ font-style: normal;
 font-weight: 500;
 line-height: 16px; /* 133.33
 `;
-export const ModalFilmDetailDiscription = styled.p`
+ const ModalFilmDetailDiscription = styled.p`
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
   line-height: 16px;
 `;
-export const ModalDiscriptionTitle = styled.h3`
+ const ModalDiscriptionTitle = styled.h3`
   margin: 12px 0 8px 0;
   font-size: 12px;
   font-style: normal;
@@ -115,7 +114,7 @@ export const ModalDiscriptionTitle = styled.h3`
   line-height: 16px; /* 133.333% */
   text-transform: uppercase;
 `;
-export const ModalDiscriptionText = styled.p`
+ const ModalDiscriptionText = styled.p`
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
@@ -123,10 +122,10 @@ export const ModalDiscriptionText = styled.p`
   margin-bottom: 30px;
 `;
 
-export const ModalUc = styled.span`
+ const ModalUc = styled.span`
   text-transform: uppercase;
 `;
-export const ModalRedBg = styled.span`
+ const ModalRedBg = styled.span`
   color: white;
   background-color: #b92f2c;
 
@@ -134,3 +133,22 @@ export const ModalRedBg = styled.span`
   padding: 1px 7px 1px 10px;
   margin-right: 4px;
 `;
+
+export  {
+  ModalCloseBtn,
+  ModalContainer,
+  ModalContent,
+  ModalDiscription,
+  ModalDiscriptionText,
+  ModalDiscriptionTitle,
+  ModalFilmDetailDiscription,
+  ModalFilmDetailTable,
+  ModalFilmDetailTb,
+  ModalFilmDetailTitle,
+  ModalFilmDetailTr,
+  ModalPoster,
+  ModalRedBg,
+  ModalTitle,
+  ModalUc,
+
+}
