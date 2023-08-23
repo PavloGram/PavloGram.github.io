@@ -1,6 +1,4 @@
-import { styled } from "styled-components";
-
-
+import { styled } from 'styled-components';
 
 const CardList = styled.ul`
   margin-top: 20px;
@@ -10,14 +8,12 @@ const CardList = styled.ul`
 const CardItem = styled.li`
   list-style-type: none;
   margin-bottom: 20px;
-  opacity:1;
+  opacity: 1;
 
-  :hover{
-  cursor: pointer;
-  opacity: 0.9;
-  transition: opacity 0.2s ease-out;
-
-  
+  :hover {
+    cursor: pointer;
+    opacity: 0.95;
+    transition: opacity 0.2s ease-out;
   }
 `;
 const CardThumb = styled.div`
@@ -65,5 +61,14 @@ const CardDiscriptionText = styled.p`
 const CardDiscriptionBlock = styled.div`
   display: flex;
 `;
- export {CardDiscriptionBlock, CardDiscriptionItem, CardDiscriptionList, CardDiscriptionText, CardImage,
-CardItem, CardList, CardThumb, CardTitle}
+export {
+  CardDiscriptionBlock,
+  CardDiscriptionItem,
+  CardDiscriptionList,
+  CardDiscriptionText,
+  CardImage,
+  CardItem,
+  CardList,
+  CardThumb,
+  CardTitle,
+};
