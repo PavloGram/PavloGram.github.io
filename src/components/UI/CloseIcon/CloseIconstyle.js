@@ -6,6 +6,6 @@ export const CloseBtnIconStyle = styled.svg`
   height: 25px;
 
   :hover{
-    stroke: #ffffff;
+    
   }
 `;

@@ -4,7 +4,7 @@ export const ButtonStyle = styled.button`
 
 color: #B92F2C;
 text-align: center;
-font-size: 10px;
+font-size: 12px;
 font-style: normal;
 font-weight: 500;
 line-height: normal;

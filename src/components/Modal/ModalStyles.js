@@ -13,6 +13,7 @@ import { css, styled } from 'styled-components';
   justify-content: center;
   pointer-events: none;
   opacity: 0;
+  
 
   transition: 0.5s;
 
@@ -24,8 +25,9 @@ import { css, styled } from 'styled-components';
     `}
 `;
  const ModalContent = styled.div`
+ 
   width: 280px;
-  margin-right: 17px;
+  margin-right: 14px;
   padding: 48px 20px 40px 20px;
   background-color: white;
   transform: scale(0.5);
@@ -69,7 +71,8 @@ import { css, styled } from 'styled-components';
   border-radius: 5px;
 `;
 
- const ModalDiscription = styled.div``;
+ const ModalDiscription = styled.div`
+ margin-right: -6px;`;
  const ModalTitle = styled.h2`
   margin: 20px 0 20px 0;
   font-size: 20px;
