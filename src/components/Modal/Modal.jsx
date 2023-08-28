@@ -7,21 +7,21 @@ import {
   ModalDiscriptionTitle,
   ModalFilmDetailDiscription,
   ModalFilmDetailTable,
-  ModalFilmDetailTb,
+  ModalFilmDetailTd,
   ModalFilmDetailTitle,
   ModalFilmDetailTr,
   ModalPoster,
-  ModalRedBg,
+  ModalTextChangeBg,
   ModalTitle,
-  ModalUc,
+  ModalTansformTextToUpperCase,
  } from './ModalStyles';
 import candyCane from '../../images/candy-cane.jpg';
 
 
 import ModalGenres from '../ModalGenres/ModalGenres';
 import Button from '../Button/Button';
-import { useEffect, useState } from 'react';
-import { genres } from '../../data/genres';
+// import { useEffect, useState } from 'react';
+// import { genres } from '../../data/genres';
 import CloseIcon from '../UI/CloseIcon/CloseIcon';
 
 const LOCAL_STORAGE_WATCHED_KEY = 'watched';
@@ -33,8 +33,8 @@ localStorage.setItem(LOCAL_STORAGE_WATCHED_KEY, watchetArrey);
 localStorage.setItem(LOCAL_STORAGE_QUEUE_KEY, queueArrey);
 
 function Modal({ active, setActive, currentFilm }) {
-  const [watched, setWatched] = useState(false);
-  const [queue, setQueue] = useState(false);
+  // const [watched, setWatched] = useState(false);
+  // const [queue, setQueue] = useState(false);
   watchetArrey = localStorage.getItem(LOCAL_STORAGE_WATCHED_KEY);
   queueArrey = localStorage.getItem(LOCAL_STORAGE_QUEUE_KEY);
 
@@ -57,7 +57,7 @@ function Modal({ active, setActive, currentFilm }) {
     setActive(!active);
   }
 
-  // console.log(currentFilm);
+  console.log(currentFilm);
   return (
     <ModalContainer $active={active ? 1 : 0} onClick={changeActive}>
       <ModalContent $active={active ? 1 : 0} onClick={e => e.stopPropagation()}>
@@ -75,43 +75,43 @@ function Modal({ active, setActive, currentFilm }) {
           <ModalTitle>{currentFilm.original_title}</ModalTitle>
           <ModalFilmDetailTable>
             <ModalFilmDetailTr>
-              <ModalFilmDetailTb>
+              <ModalFilmDetailTd>
                 <ModalFilmDetailTitle>Vote / Votes</ModalFilmDetailTitle>
-              </ModalFilmDetailTb>
-              <ModalFilmDetailTb>
+              </ModalFilmDetailTd>
+              <ModalFilmDetailTd>
                 <ModalFilmDetailDiscription>
-                  <ModalRedBg>
+                  <ModalTextChangeBg>
                     {Number(currentFilm.vote_average).toFixed(1)}{' '}
-                  </ModalRedBg>
+                  </ModalTextChangeBg>
                   / {currentFilm.vote_count}
                 </ModalFilmDetailDiscription>
-              </ModalFilmDetailTb>
+              </ModalFilmDetailTd>
             </ModalFilmDetailTr>
             <ModalFilmDetailTr>
-              <ModalFilmDetailTb>
+              <ModalFilmDetailTd>
                 <ModalFilmDetailTitle>Popularity</ModalFilmDetailTitle>
-              </ModalFilmDetailTb>
-              <ModalFilmDetailTb>
+              </ModalFilmDetailTd>
+              <ModalFilmDetailTd>
                 <ModalFilmDetailDiscription>
                   {Number(currentFilm.popularity).toFixed(1)}
                 </ModalFilmDetailDiscription>
-              </ModalFilmDetailTb>
+              </ModalFilmDetailTd>
             </ModalFilmDetailTr>
             <ModalFilmDetailTr>
-              <ModalFilmDetailTb>
+              <ModalFilmDetailTd>
                 <ModalFilmDetailTitle>Original Title</ModalFilmDetailTitle>
-              </ModalFilmDetailTb>
-              <ModalFilmDetailTb>
+              </ModalFilmDetailTd>
+              <ModalFilmDetailTd>
                 <ModalFilmDetailDiscription>
-                  <ModalUc>{currentFilm.original_title}</ModalUc>
+                  <ModalTansformTextToUpperCase>{currentFilm.original_title}</ModalTansformTextToUpperCase>
                 </ModalFilmDetailDiscription>
-              </ModalFilmDetailTb>
+              </ModalFilmDetailTd>
             </ModalFilmDetailTr>
             <ModalFilmDetailTr>
-              <ModalFilmDetailTb>
+              <ModalFilmDetailTd>
                 <ModalFilmDetailTitle>Genre</ModalFilmDetailTitle>
-              </ModalFilmDetailTb>
-              <ModalFilmDetailTb>
+              </ModalFilmDetailTd>
+              <ModalFilmDetailTd>
                 <ModalFilmDetailDiscription>
                   <ModalGenres currentFilmGenre_ids={currentFilm.genre_ids} />
                   
@@ -120,14 +120,14 @@ function Modal({ active, setActive, currentFilm }) {
       })}
      */}
                 </ModalFilmDetailDiscription>
-              </ModalFilmDetailTb>
+              </ModalFilmDetailTd>
             </ModalFilmDetailTr>
           </ModalFilmDetailTable>
           <ModalDiscriptionTitle>About</ModalDiscriptionTitle>
-          {/* <ModalDiscriptionText>{currentFilm.overview}</ModalDiscriptionText> */}
+          <ModalDiscriptionText>{currentFilm.overview}</ModalDiscriptionText>
           <Button
             change={handleChangeWatchedList}
-            text={`${watched ? ` Rem` : `Add`} to watched`}
+            text= 'Add to watched'
           ></Button>
           <Button change={handleChangeQueueList} text="Add to queue"></Button>
         </ModalDiscription>

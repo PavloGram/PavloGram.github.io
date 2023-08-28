@@ -1,16 +1,16 @@
 import Form from '../Form/Form';
 import Logo from '../Logo/Logo';
-import MenuList from '../MenuList/MenuList';
+import Menu from '../Menu/Menu';
 
-import { HeaderContainer, Navi } from './HeaderStyled';
+import { HeaderContainer, Nav } from './HeaderStyled';
 
 function Header({ setFilm }) {
   return (
     <HeaderContainer>
-      <Navi>
-        <MenuList />
+      <Nav>
+        <Menu />
         <Form setFilm={setFilm} />
-      </Navi>
+      </Nav>
       <Logo />
     </HeaderContainer>
   );

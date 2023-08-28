@@ -1,7 +1,6 @@
 import { css, styled } from 'styled-components';
 
-
- const ModalContainer = styled.div`
+const ModalContainer = styled.div`
   height: 100vh;
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.5);
@@ -13,7 +12,6 @@ import { css, styled } from 'styled-components';
   justify-content: center;
   pointer-events: none;
   opacity: 0;
-  
 
   transition: 0.5s;
 
@@ -24,8 +22,7 @@ import { css, styled } from 'styled-components';
       pointer-events: all;
     `}
 `;
- const ModalContent = styled.div`
- 
+const ModalContent = styled.div`
   width: 280px;
   margin-right: 14px;
   padding: 48px 20px 40px 20px;
@@ -41,11 +38,11 @@ import { css, styled } from 'styled-components';
       transform: scale(1);
     `}
 `;
- const ModalCloseBtn = styled.button`
+const ModalCloseBtn = styled.button`
   position: absolute;
   top: 8px;
   right: 8px;
- 
+
   display: flex;
   align-items: center;
   margin: 0;
@@ -64,71 +61,71 @@ import { css, styled } from 'styled-components';
     // stroke: #ffffff;
   }
 `;
- 
- const ModalPoster = styled.img`
+
+const ModalPoster = styled.img`
   display: block;
   width: 240px;
   border-radius: 5px;
 `;
 
- const ModalDiscription = styled.div`
- margin-right: -6px;`;
- const ModalTitle = styled.h2`
+const ModalDiscription = styled.div``;
+const ModalTitle = styled.h2`
   margin: 20px 0 20px 0;
-  font-size: 20px;
-  font-style: normal;
   font-weight: 500;
+  font-size: 20px;
   line-height: normal;
   text-transform: uppercase;
 `;
- const ModalFilmDetailTable = styled.div`
-  border-collapse: separate;
-  border-spacing: 0;
+const ModalFilmDetailTable = styled.div`
+  // border-collapse: separate;
+  // border-spacing: 0;
 `;
- const ModalFilmDetailTr = styled.div`
+const ModalFilmDetailTr = styled.div`
   display: flex;
   align-items: flex-start;
-  word-break: break-all;
   margin-bottom: 8px;
 `;
- const ModalFilmDetailTb = styled.div`
-  word-break: break-all;
+const ModalFilmDetailTd = styled.div`
   width: 110px;
 `;
- const ModalFilmDetailTitle = styled.p`
+const ModalFilmDetailTitle = styled.p`
 color: #8C8C8C;
-font-family: Roboto;
+font-size: 12px;
+font-weight: 500;
+line-height: 1.3 ;
+`;
+const ModalFilmDetailDiscription = styled.p`
+
+
 font-size: 12px;
 font-style: normal;
 font-weight: 500;
-line-height: 16px; /* 133.33
+line-height: 1.3;
+
+
+ 
 `;
- const ModalFilmDetailDiscription = styled.p`
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 16px;
-`;
- const ModalDiscriptionTitle = styled.h3`
+const ModalDiscriptionTitle = styled.h3`
   margin: 12px 0 8px 0;
+
   font-size: 12px;
-  font-style: normal;
   font-weight: 500;
-  line-height: 16px; /* 133.333% */
+  line-height: 1.3;
   text-transform: uppercase;
 `;
- const ModalDiscriptionText = styled.p`
+const ModalDiscriptionText = styled.p`
   font-size: 12px;
-  font-style: normal;
   font-weight: 500;
-  line-height: 20px;
+  line-height: 1.6;
+
+  
   margin-bottom: 30px;
 `;
 
- const ModalUc = styled.span`
+const ModalTansformTextToUpperCase = styled.span`
   text-transform: uppercase;
 `;
- const ModalRedBg = styled.span`
+const ModalTextChangeBg = styled.span`
   color: white;
   background-color: #b92f2c;
 
@@ -137,7 +134,7 @@ line-height: 16px; /* 133.33
   margin-right: 4px;
 `;
 
-export  {
+export {
   ModalCloseBtn,
   ModalContainer,
   ModalContent,
@@ -146,12 +143,11 @@ export  {
   ModalDiscriptionTitle,
   ModalFilmDetailDiscription,
   ModalFilmDetailTable,
-  ModalFilmDetailTb,
+  ModalFilmDetailTd,
   ModalFilmDetailTitle,
   ModalFilmDetailTr,
   ModalPoster,
-  ModalRedBg,
+  ModalTextChangeBg,
   ModalTitle,
-  ModalUc,
-
-}
+  ModalTansformTextToUpperCase,
+};

@@ -49,9 +49,7 @@ const CardDiscriptionItem = styled.li`
 `;
 const CardDiscriptionText = styled.p`
   color: #b92f2c;
-
   font-size: 12px;
-  font-style: normal;
   font-weight: 500;
   line-height: 16px;
   padding-right: 2px;

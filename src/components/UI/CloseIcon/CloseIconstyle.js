@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 
 
-export const CloseBtnIconStyle = styled.svg`
+export const CloseBtnIcon = styled.svg`
   width: 25px;
   height: 25px;
 

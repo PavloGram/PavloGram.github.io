@@ -1,4 +1,4 @@
-import {HeaderLogo, HeaderLogoImgStyle, HeaderLogoText} from './LogoStyled';
+import {HeaderLogo, HeaderImg, HeaderLogoText} from './LogoStyled';
 import logoImage from '../../images/header/logoo.svg'
 
 
@@ -7,7 +7,7 @@ import logoImage from '../../images/header/logoo.svg'
 function Logo(){
     return(
     <HeaderLogo>
-        <HeaderLogoImgStyle src={logoImage} alt='logo' />
+        <HeaderImg src={logoImage} alt='logo' />
         <HeaderLogoText>Filmoteka</HeaderLogoText>
     </HeaderLogo>)
 }

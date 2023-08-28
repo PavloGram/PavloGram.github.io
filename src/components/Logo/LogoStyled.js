@@ -1,25 +1,23 @@
-import { styled } from "styled-components"
+import { styled } from 'styled-components';
 
 const HeaderLogo = styled.div`
-margin-top: 294px;
+  margin-top: 294px;
 
-display: flex;
-align-items: center;
-justify-content: center;
-`
-const  HeaderLogoImgStyle = styled.img`
-padding-right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+const HeaderImg = styled.img`
+  padding-right: 8px;
+`;
+const HeaderLogoText = styled.p`
+  color: #ffffff;
 
-`
-const  HeaderLogoText = styled.p`
-color: #ffffff;
+  text-align: center;
+  font-weight: 500;
+  font-size: 32px;
 
-text-align: center;
-font-family: Roboto;
-font-size: 32px;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
-margin: 0;
-`
-export {HeaderLogo, HeaderLogoImgStyle, HeaderLogoText}
+  line-height: normal;
+  margin: 0;
+`;
+export { HeaderLogo, HeaderImg, HeaderLogoText };

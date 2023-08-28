@@ -17,7 +17,7 @@ border-radius: 10px;
 // padding: 14px 14px 20px 14px;
 
 ` 
-const Navi = styled.nav`
+const Nav = styled.nav`
 display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -26,4 +26,4 @@ display: flex;
   // padding-left: 14px;
   // padding-right: 14px;
 `
-export {HeaderContainer, Navi}
+export {HeaderContainer, Nav}

@@ -51,7 +51,7 @@ function CardListing({ filmInfo, setActive, setCurrentFilm, isActivModal }) {
                     .map((et, index) => (
                       <CardDiscriptionItem key={et.id}>
                         <CardDiscriptionText>
-                        {el.genre_ids.length !== 1 && index !== 1 ? `${et.genre},` : `${et.genre} |`}
+                        {el.genre_ids.length !== 1 && index !== 1 ? `${et.genre}, ` : ` ${et.genre} |`}
                            {/* {index !== 1 ? `${et.genre},` : `${et.genre} |`} */}
                          
                         </CardDiscriptionText>

@@ -16,16 +16,15 @@ display: none;
 color: white;
 `
 const SearchFormInput = styled.input`
+color: #000000;
 font-style: normal;
 font-weight: 400;
 font-size: 12px;
-line-height: 1.17;
-color: #000000;
-// width: 100%;
+line-height: normal;
+
+
 width: 220px;
-// height: 42px;
-// height: 34px;
-// padding: 16px;
+
 background: #ffffff;
 border-radius: 100px;
 border: none;
@@ -36,7 +35,7 @@ outline: none;
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
-    line-height: 1.17;
+    line-height: normal;
     color: #000000;
   
  }
