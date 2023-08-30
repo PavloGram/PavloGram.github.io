@@ -14,45 +14,56 @@ import {
   ModalTextChangeBg,
   ModalTitle,
   ModalTansformTextToUpperCase,
- } from './ModalStyles';
+  ModalButtonWrapper,
+} from './ModalStyles';
+
 import candyCane from '../../images/candy-cane.jpg';
-
-
 import ModalGenres from '../ModalGenres/ModalGenres';
 import Button from '../Button/Button';
-// import { useEffect, useState } from 'react';
-// import { genres } from '../../data/genres';
 import CloseIcon from '../UI/CloseIcon/CloseIcon';
+import { useState } from 'react';
+import { changeLocalStorage } from '../../js/changeLocalStorage';
 
 const LOCAL_STORAGE_WATCHED_KEY = 'watched';
 const LOCAL_STORAGE_QUEUE_KEY = 'queue';
 
-let watchetArrey = [];
+let watchedArrey = [];
 let queueArrey = [];
-localStorage.setItem(LOCAL_STORAGE_WATCHED_KEY, watchetArrey);
-localStorage.setItem(LOCAL_STORAGE_QUEUE_KEY, queueArrey);
+let isWat = false;
+let isQue = false;
+try {
+  watchedArrey = JSON.parse(localStorage.getItem(LOCAL_STORAGE_WATCHED_KEY));
+  isWat = true;
+} catch (error) {
+  console.log(error);
+}
+try {
+  queueArrey = JSON.parse(localStorage.getItem(LOCAL_STORAGE_QUEUE_KEY));
+  isQue = true;
+} catch (error) {
+  console.log(error);
+}
 
 function Modal({ active, setActive, currentFilm }) {
-  // const [watched, setWatched] = useState(false);
-  // const [queue, setQueue] = useState(false);
-  watchetArrey = localStorage.getItem(LOCAL_STORAGE_WATCHED_KEY);
-  queueArrey = localStorage.getItem(LOCAL_STORAGE_QUEUE_KEY);
+  const [isWatched, setIsWatched] = useState(isWat);
+  const [isQueued, setIsQueued] = useState(isQue);
 
   function handleChangeWatchedList() {
-    localStorage.setItem(
-      LOCAL_STORAGE_WATCHED_KEY,
-      JSON.stringify(currentFilm.id)
+    changeLocalStorage(
+      watchedArrey,
+      currentFilm,
+      setIsWatched,
+      LOCAL_STORAGE_WATCHED_KEY
     );
-
-    console.log(localStorage.getItem(LOCAL_STORAGE_WATCHED_KEY));
   }
-
   function handleChangeQueueList() {
-    localStorage.removeItem(LOCAL_STORAGE_WATCHED_KEY);
-    // localStorage.setItem(LOCAL_STORAGE_QUEUE_KEY, currentFilm.id)
-    console.log(currentFilm.id);
+    changeLocalStorage(
+      queueArrey,
+      currentFilm,
+      setIsQueued,
+      LOCAL_STORAGE_QUEUE_KEY
+    );
   }
-
   function changeActive() {
     setActive(!active);
   }
@@ -62,7 +73,7 @@ function Modal({ active, setActive, currentFilm }) {
     <ModalContainer $active={active ? 1 : 0} onClick={changeActive}>
       <ModalContent $active={active ? 1 : 0} onClick={e => e.stopPropagation()}>
         <ModalCloseBtn onClick={changeActive} type="button">
-          <CloseIcon/>
+          <CloseIcon />
         </ModalCloseBtn>
         <ModalPoster
           src={
@@ -103,7 +114,9 @@ function Modal({ active, setActive, currentFilm }) {
               </ModalFilmDetailTd>
               <ModalFilmDetailTd>
                 <ModalFilmDetailDiscription>
-                  <ModalTansformTextToUpperCase>{currentFilm.original_title}</ModalTansformTextToUpperCase>
+                  <ModalTansformTextToUpperCase>
+                    {currentFilm.original_title}
+                  </ModalTansformTextToUpperCase>
                 </ModalFilmDetailDiscription>
               </ModalFilmDetailTd>
             </ModalFilmDetailTr>
@@ -114,22 +127,22 @@ function Modal({ active, setActive, currentFilm }) {
               <ModalFilmDetailTd>
                 <ModalFilmDetailDiscription>
                   <ModalGenres currentFilmGenre_ids={currentFilm.genre_ids} />
-                  
-      {/* {currentFilm.genre_ids.map((el, i) => {
-      return <p>{currentFilm.genre_ids.length === i + 1 ? `${el}.` : `${el},`}</p>
-      })}
-     */}
                 </ModalFilmDetailDiscription>
               </ModalFilmDetailTd>
             </ModalFilmDetailTr>
           </ModalFilmDetailTable>
           <ModalDiscriptionTitle>About</ModalDiscriptionTitle>
           <ModalDiscriptionText>{currentFilm.overview}</ModalDiscriptionText>
-          <Button
-            change={handleChangeWatchedList}
-            text= 'Add to watched'
-          ></Button>
-          <Button change={handleChangeQueueList} text="Add to queue"></Button>
+          <ModalButtonWrapper>
+            <Button
+              change={handleChangeWatchedList}
+              text={isWatched ? 'Rem to watched' : 'Add to watched'}
+            ></Button>
+            <Button
+              change={handleChangeQueueList}
+              text={isQueued ? 'Rem to queue' : 'Add to queue'}
+            ></Button>
+          </ModalButtonWrapper>
         </ModalDiscription>
       </ModalContent>
     </ModalContainer>

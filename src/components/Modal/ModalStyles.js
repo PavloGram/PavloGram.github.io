@@ -24,7 +24,7 @@ const ModalContainer = styled.div`
 `;
 const ModalContent = styled.div`
   width: 280px;
-  margin-right: 14px;
+  margin-right: 20px;
   padding: 48px 20px 40px 20px;
   background-color: white;
   transform: scale(0.5);
@@ -133,6 +133,11 @@ const ModalTextChangeBg = styled.span`
   padding: 1px 7px 1px 10px;
   margin-right: 4px;
 `;
+const ModalButtonWrapper = styled.div`
+width: 100%;
+margin-right: -4px;
+`
+
 
 export {
   ModalCloseBtn,
@@ -150,4 +155,5 @@ export {
   ModalTextChangeBg,
   ModalTitle,
   ModalTansformTextToUpperCase,
+  ModalButtonWrapper,
 };
