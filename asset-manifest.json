@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/film/static/js/main.192dd61e.js",
+    "main.js": "/film/static/js/main.2c67aa3d.js",
     "static/media/candy-cane.jpg": "/film/static/media/candy-cane.a8f606e5ae2035f481ce.jpg",
     "static/media/header-bg-mob.jpg": "/film/static/media/header-bg-mob.810a8df6eedc0415583d.jpg",
     "index.html": "/film/index.html",
     "static/media/logoo.svg": "/film/static/media/logoo.5f5534f8fc1980db1bb48d3a5f01b677.svg",
-    "main.192dd61e.js.map": "/film/static/js/main.192dd61e.js.map"
+    "main.2c67aa3d.js.map": "/film/static/js/main.2c67aa3d.js.map"
   },
   "entrypoints": [
-    "static/js/main.192dd61e.js"
+    "static/js/main.2c67aa3d.js"
   ]
 }
