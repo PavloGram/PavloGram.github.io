@@ -28,43 +28,46 @@ const LOCAL_STORAGE_WATCHED_KEY = 'watched';
 const LOCAL_STORAGE_QUEUE_KEY = 'queue';
 
 function Modal({ active, setActive, currentFilm }) {
+  const [toggle, setToggle] = useState(false);
+
   let watchedArrey = [];
   let queueArrey = [];
-  let isWat = false;
-  let isQue = false;
+  let isWatched = false;
+  let isQueue = false;
+
   try {
     watchedArrey = JSON.parse(localStorage.getItem(LOCAL_STORAGE_WATCHED_KEY));
-    if (queueArrey.includes(currentFilm.id)) {
-      isWat = true;
+    if (watchedArrey.includes(currentFilm.id)) {
+      isWatched = true;
     }
   } catch (error) {
     console.log(error);
   }
+
   try {
     queueArrey = JSON.parse(localStorage.getItem(LOCAL_STORAGE_QUEUE_KEY));
     if (queueArrey.includes(currentFilm.id)) {
-      isQue = true;
+      isQueue = true;
     }
   } catch (error) {
     console.log(error);
   }
 
-  const [isWatched, setIsWatched] = useState(isWat);
-  const [isQueued, setIsQueued] = useState(isQue);
-
   function handleChangeWatchedList() {
+    setToggle(!toggle);
     changeLocalStorage(
       watchedArrey,
       currentFilm,
-      setIsWatched,
+      isWatched,
       LOCAL_STORAGE_WATCHED_KEY
     );
   }
   function handleChangeQueueList() {
+    setToggle(!toggle);
     changeLocalStorage(
       queueArrey,
       currentFilm,
-      setIsQueued,
+      isQueue,
       LOCAL_STORAGE_QUEUE_KEY
     );
   }
@@ -144,7 +147,7 @@ function Modal({ active, setActive, currentFilm }) {
             ></Button>
             <Button
               change={handleChangeQueueList}
-              text={isQueued ? 'Rem to queue' : 'Add to queue'}
+              text={isQueue ? 'Rem to queue' : 'Add to queue'}
             ></Button>
           </ModalButtonWrapper>
         </ModalDiscription>
