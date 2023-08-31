@@ -27,24 +27,28 @@ import { changeLocalStorage } from '../../js/changeLocalStorage';
 const LOCAL_STORAGE_WATCHED_KEY = 'watched';
 const LOCAL_STORAGE_QUEUE_KEY = 'queue';
 
-let watchedArrey = [];
-let queueArrey = [];
-let isWat = false;
-let isQue = false;
-try {
-  watchedArrey = JSON.parse(localStorage.getItem(LOCAL_STORAGE_WATCHED_KEY));
-  isWat = true;
-} catch (error) {
-  console.log(error);
-}
-try {
-  queueArrey = JSON.parse(localStorage.getItem(LOCAL_STORAGE_QUEUE_KEY));
-  isQue = true;
-} catch (error) {
-  console.log(error);
-}
-
 function Modal({ active, setActive, currentFilm }) {
+  let watchedArrey = [];
+  let queueArrey = [];
+  let isWat = false;
+  let isQue = false;
+  try {
+    watchedArrey = JSON.parse(localStorage.getItem(LOCAL_STORAGE_WATCHED_KEY));
+    if (queueArrey.includes(currentFilm.id)) {
+      isWat = true;
+    }
+  } catch (error) {
+    console.log(error);
+  }
+  try {
+    queueArrey = JSON.parse(localStorage.getItem(LOCAL_STORAGE_QUEUE_KEY));
+    if (queueArrey.includes(currentFilm.id)) {
+      isQue = true;
+    }
+  } catch (error) {
+    console.log(error);
+  }
+
   const [isWatched, setIsWatched] = useState(isWat);
   const [isQueued, setIsQueued] = useState(isQue);
 
