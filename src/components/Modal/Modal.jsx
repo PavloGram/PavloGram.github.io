@@ -5,24 +5,19 @@ import {
   ModalDiscription,
   ModalDiscriptionText,
   ModalDiscriptionTitle,
-  ModalFilmDetailDiscription,
-  ModalFilmDetailTable,
-  ModalFilmDetailTd,
-  ModalFilmDetailTitle,
-  ModalFilmDetailTr,
   ModalPoster,
-  ModalTextChangeBg,
   ModalTitle,
-  ModalTansformTextToUpperCase,
   ModalButtonWrapper,
 } from './ModalStyles';
 
 import candyCane from '../../images/candy-cane.jpg';
-import ModalGenres from '../ModalGenres/ModalGenres';
 import Button from '../Button/Button';
 import CloseIcon from '../UI/CloseIcon/CloseIcon';
 import { useState } from 'react';
 import { changeLocalStorage } from '../../js/changeLocalStorage';
+import ModalList from '../ModalList/ModalList';
+import { localStorageParse } from '../../js/localStorageParce';
+import { detectIdInArrey } from '../../js/detectIdInArrey';
 
 const LOCAL_STORAGE_WATCHED_KEY = 'watched';
 const LOCAL_STORAGE_QUEUE_KEY = 'queue';
@@ -30,28 +25,10 @@ const LOCAL_STORAGE_QUEUE_KEY = 'queue';
 function Modal({ active, setActive, currentFilm }) {
   const [toggle, setToggle] = useState(false);
 
-  let watchedArrey = [];
-  let queueArrey = [];
-  let isWatched = false;
-  let isQueue = false;
-
-  try {
-    watchedArrey = JSON.parse(localStorage.getItem(LOCAL_STORAGE_WATCHED_KEY));
-    if (watchedArrey.includes(currentFilm.id)) {
-      isWatched = true;
-    }
-  } catch (error) {
-    console.log(error);
-  }
-
-  try {
-    queueArrey = JSON.parse(localStorage.getItem(LOCAL_STORAGE_QUEUE_KEY));
-    if (queueArrey.includes(currentFilm.id)) {
-      isQueue = true;
-    }
-  } catch (error) {
-    console.log(error);
-  }
+  let watchedArrey = localStorageParse(LOCAL_STORAGE_WATCHED_KEY);
+  let queueArrey = localStorageParse(LOCAL_STORAGE_QUEUE_KEY);
+  let isWatched = detectIdInArrey(watchedArrey, currentFilm);
+  let isQueue = detectIdInArrey(queueArrey, currentFilm);
 
   function handleChangeWatchedList() {
     setToggle(!toggle);
@@ -75,7 +52,7 @@ function Modal({ active, setActive, currentFilm }) {
     setActive(!active);
   }
 
-  console.log(currentFilm);
+  // console.log(currentFilm);
   return (
     <ModalContainer $active={active ? 1 : 0} onClick={changeActive}>
       <ModalContent $active={active ? 1 : 0} onClick={e => e.stopPropagation()}>
@@ -91,53 +68,8 @@ function Modal({ active, setActive, currentFilm }) {
         ></ModalPoster>
         <ModalDiscription>
           <ModalTitle>{currentFilm.original_title}</ModalTitle>
-          <ModalFilmDetailTable>
-            <ModalFilmDetailTr>
-              <ModalFilmDetailTd>
-                <ModalFilmDetailTitle>Vote / Votes</ModalFilmDetailTitle>
-              </ModalFilmDetailTd>
-              <ModalFilmDetailTd>
-                <ModalFilmDetailDiscription>
-                  <ModalTextChangeBg>
-                    {Number(currentFilm.vote_average).toFixed(1)}{' '}
-                  </ModalTextChangeBg>
-                  / {currentFilm.vote_count}
-                </ModalFilmDetailDiscription>
-              </ModalFilmDetailTd>
-            </ModalFilmDetailTr>
-            <ModalFilmDetailTr>
-              <ModalFilmDetailTd>
-                <ModalFilmDetailTitle>Popularity</ModalFilmDetailTitle>
-              </ModalFilmDetailTd>
-              <ModalFilmDetailTd>
-                <ModalFilmDetailDiscription>
-                  {Number(currentFilm.popularity).toFixed(1)}
-                </ModalFilmDetailDiscription>
-              </ModalFilmDetailTd>
-            </ModalFilmDetailTr>
-            <ModalFilmDetailTr>
-              <ModalFilmDetailTd>
-                <ModalFilmDetailTitle>Original Title</ModalFilmDetailTitle>
-              </ModalFilmDetailTd>
-              <ModalFilmDetailTd>
-                <ModalFilmDetailDiscription>
-                  <ModalTansformTextToUpperCase>
-                    {currentFilm.original_title}
-                  </ModalTansformTextToUpperCase>
-                </ModalFilmDetailDiscription>
-              </ModalFilmDetailTd>
-            </ModalFilmDetailTr>
-            <ModalFilmDetailTr>
-              <ModalFilmDetailTd>
-                <ModalFilmDetailTitle>Genre</ModalFilmDetailTitle>
-              </ModalFilmDetailTd>
-              <ModalFilmDetailTd>
-                <ModalFilmDetailDiscription>
-                  <ModalGenres currentFilmGenre_ids={currentFilm.genre_ids} />
-                </ModalFilmDetailDiscription>
-              </ModalFilmDetailTd>
-            </ModalFilmDetailTr>
-          </ModalFilmDetailTable>
+          <ModalList currentFilm={currentFilm} />
+
           <ModalDiscriptionTitle>About</ModalDiscriptionTitle>
           <ModalDiscriptionText>{currentFilm.overview}</ModalDiscriptionText>
           <ModalButtonWrapper>

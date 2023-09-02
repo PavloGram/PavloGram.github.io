@@ -1,7 +1,7 @@
-export function detectIdInArrey(watchedArrey, currentFilm, isWat) {
+export function detectIdInArrey(watchedArrey, currentFilm) {
   if (watchedArrey.includes(currentFilm.id)) {
-    return isWat = true;
+    return true;
   } else {
-    return isWat = false;
+    return false;
   }
 }

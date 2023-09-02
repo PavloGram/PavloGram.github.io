@@ -1,8 +1,7 @@
-export  function localStorageParse(watchedArrey, storageKey){
-    try {
-       return watchedArrey = JSON.parse(localStorage.getItem(storageKey));
-       
-      } catch (error) {
-        console.log(error);
-      }
+export function localStorageParse(storageKey) {
+  try {
+    return JSON.parse(localStorage.getItem(storageKey));
+  } catch (error) {
+    console.log(error);
+  }
 }

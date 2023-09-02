@@ -24,7 +24,7 @@ const ModalContainer = styled.div`
 `;
 const ModalContent = styled.div`
   width: 280px;
-  margin-right: 20px;
+  margin-right: 15px;
   padding: 48px 20px 40px 20px;
   background-color: white;
   transform: scale(0.5);
@@ -76,37 +76,9 @@ const ModalTitle = styled.h2`
   line-height: normal;
   text-transform: uppercase;
 `;
-const ModalFilmDetailTable = styled.div`
-  // border-collapse: separate;
-  // border-spacing: 0;
-`;
-const ModalFilmDetailTr = styled.div`
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 8px;
-`;
-const ModalFilmDetailTd = styled.div`
-  width: 110px;
-`;
-const ModalFilmDetailTitle = styled.p`
-color: #8C8C8C;
-font-size: 12px;
-font-weight: 500;
-line-height: 1.3 ;
-`;
-const ModalFilmDetailDiscription = styled.p`
 
-
-font-size: 12px;
-font-style: normal;
-font-weight: 500;
-line-height: 1.3;
-
-
- 
-`;
 const ModalDiscriptionTitle = styled.h3`
-  margin: 12px 0 8px 0;
+  margin: 20px 0 8px 0;
 
   font-size: 12px;
   font-weight: 500;
@@ -118,26 +90,13 @@ const ModalDiscriptionText = styled.p`
   font-weight: 500;
   line-height: 1.6;
 
-  
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 `;
 
-const ModalTansformTextToUpperCase = styled.span`
-  text-transform: uppercase;
-`;
-const ModalTextChangeBg = styled.span`
-  color: white;
-  background-color: #b92f2c;
-
-  border-radius: 5px;
-  padding: 1px 7px 1px 10px;
-  margin-right: 4px;
-`;
 const ModalButtonWrapper = styled.div`
-width: 100%;
-margin-right: -4px;
-`
-
+  width: 100%;
+  margin-right: -4px;
+`;
 
 export {
   ModalCloseBtn,
@@ -146,14 +105,7 @@ export {
   ModalDiscription,
   ModalDiscriptionText,
   ModalDiscriptionTitle,
-  ModalFilmDetailDiscription,
-  ModalFilmDetailTable,
-  ModalFilmDetailTd,
-  ModalFilmDetailTitle,
-  ModalFilmDetailTr,
   ModalPoster,
-  ModalTextChangeBg,
   ModalTitle,
-  ModalTansformTextToUpperCase,
   ModalButtonWrapper,
 };

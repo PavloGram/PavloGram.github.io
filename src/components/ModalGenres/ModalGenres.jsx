@@ -1,6 +1,4 @@
-import {GenText} from './ModalGenresStyles';
 import { genres } from '../../data/genres';
-
 
 function ModalGenres({ currentFilmGenre_ids = [] }) {
   return (
@@ -15,11 +13,11 @@ function ModalGenres({ currentFilmGenre_ids = [] }) {
         })
         .map((el, i) => {
           return (
-            <GenText key={el.id}>
+            <span key={el.id}>
               {currentFilmGenre_ids.length === i + 1
                 ? `${el.genre}.`
                 : `${el.genre}, `}
-            </GenText>
+            </span>
           );
         })}
     </>
