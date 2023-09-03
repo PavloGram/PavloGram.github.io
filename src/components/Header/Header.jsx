@@ -1,3 +1,4 @@
+import React from 'react'
 import Form from '../Form/Form';
 import Logo from '../Logo/Logo';
 import Menu from '../Menu/Menu';

@@ -1,3 +1,4 @@
+import React from 'react'
 import { useEffect } from 'react';
 import fetchFilms from '../../js/fetchFilms';
 import CardListing from '../CardListing/CardListing';

@@ -1,3 +1,4 @@
+import React from 'react'
 import candyCane from '../../images/candy-cane.jpg';
 
 import {
@@ -15,7 +16,7 @@ import { genres } from '../../data/genres';
 
 function CardListing({ filmInfo, setActive, setCurrentFilm, isActivModal }) {
   return (
-    <>
+    <div>
       <CardList>
         {filmInfo.map(el => (
           <CardItem
@@ -67,7 +68,7 @@ function CardListing({ filmInfo, setActive, setCurrentFilm, isActivModal }) {
         ))}
       </CardList>
       {/* <Modal active={isActivModal} setActive={setIsActivModal}></Modal> */}
-    </>
+    </div>
   );
 }
 

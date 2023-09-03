@@ -1,3 +1,4 @@
+import React from 'react'
 import { MainContainer } from "./MainStyled";
 import CardContainer from "../CardContainer/CardContainer";
 

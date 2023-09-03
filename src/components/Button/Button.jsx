@@ -1,9 +1,12 @@
+import React from "react";
+import { ButtonStyle } from "./ButtonStyles";
 
-import { ButtonStyle } from "./ButtonStyles"
-
-
-function Button ({text, change}){
-    return(<ButtonStyle onClick={change} type="button">{text}</ButtonStyle>)
+function Button({ text, change }) {
+  return (
+    <ButtonStyle onClick={change} type="button">
+      {text}
+    </ButtonStyle>
+  );
 }
 
-export default Button
+export default Button;

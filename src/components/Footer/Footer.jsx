@@ -1,3 +1,4 @@
+import React from 'react'
 import {FooterUnicodeElement, FooterContainer, FootertText, FooterLink } from "./FooterStyles"
 
 

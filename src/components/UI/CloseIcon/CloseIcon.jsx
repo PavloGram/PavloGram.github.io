@@ -1,3 +1,4 @@
+import React from 'react'
 import { CloseBtnIcon } from "./CloseIconstyle";
 
 function CloseIcon() {
