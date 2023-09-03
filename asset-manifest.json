@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/index.html/static/js/main.f4126754.js",
-    "static/media/candy-cane.jpg": "/index.html/static/media/candy-cane.a8f606e5ae2035f481ce.jpg",
-    "static/media/header-bg-mob.jpg": "/index.html/static/media/header-bg-mob.810a8df6eedc0415583d.jpg",
-    "index.html": "/index.html/index.html",
-    "static/media/logoo.svg": "/index.html/static/media/logoo.5f5534f8fc1980db1bb48d3a5f01b677.svg",
-    "main.f4126754.js.map": "/index.html/static/js/main.f4126754.js.map"
+    "main.js": "/film/static/js/main.6e764ee1.js",
+    "static/media/candy-cane.jpg": "/film/static/media/candy-cane.a8f606e5ae2035f481ce.jpg",
+    "static/media/header-bg-mob.jpg": "/film/static/media/header-bg-mob.810a8df6eedc0415583d.jpg",
+    "index.html": "/film/index.html",
+    "static/media/logoo.svg": "/film/static/media/logoo.5f5534f8fc1980db1bb48d3a5f01b677.svg",
+    "main.6e764ee1.js.map": "/film/static/js/main.6e764ee1.js.map"
   },
   "entrypoints": [
-    "static/js/main.f4126754.js"
+    "static/js/main.6e764ee1.js"
   ]
 }
