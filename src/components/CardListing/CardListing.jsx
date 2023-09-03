@@ -16,7 +16,7 @@ import { genres } from '../../data/genres';
 
 function CardListing({ filmInfo, setActive, setCurrentFilm, isActivModal }) {
   return (
-    <div>
+    <React.Fragment>
       <CardList>
         {filmInfo.map(el => (
           <CardItem
@@ -68,7 +68,7 @@ function CardListing({ filmInfo, setActive, setCurrentFilm, isActivModal }) {
         ))}
       </CardList>
       {/* <Modal active={isActivModal} setActive={setIsActivModal}></Modal> */}
-    </div>
+    </React.Fragment>
   );
 }
 

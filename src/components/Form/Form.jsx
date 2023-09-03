@@ -33,7 +33,7 @@ function Form({setFilm}){
   }
 
     return(
-     <div>
+     <React.Fragment>
      <SearchForm>
           <SearchFormInput type="text" onChange={changeInput} name='searchInput' placeholder="Movie search"></SearchFormInput>
           <SearchFormButton type="submit" onClick={hanleChange}><SearchIcon></SearchIcon></SearchFormButton>
@@ -41,7 +41,7 @@ function Form({setFilm}){
        
           <SearchFormWarningText>We couldn't find the movie <br/>
           Please try another value</SearchFormWarningText>
-        </div>
+        </React.Fragment>
     )
     }
 
