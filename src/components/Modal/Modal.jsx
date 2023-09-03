@@ -25,6 +25,11 @@ const LOCAL_STORAGE_QUEUE_KEY = 'queue';
 function Modal({ active, setActive, currentFilm }) {
   const [toggle, setToggle] = useState(false);
 
+  // let watchedArrey = []
+  // let queueArrey = []
+  // let isWatched = false
+  //  let isQueue = false
+
   let watchedArrey = localStorageParse(LOCAL_STORAGE_WATCHED_KEY);
   let queueArrey = localStorageParse(LOCAL_STORAGE_QUEUE_KEY);
   let isWatched = detectIdInArrey(watchedArrey, currentFilm);
