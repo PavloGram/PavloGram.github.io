@@ -3,7 +3,7 @@ import { genres } from '../../data/genres';
 
 function ModalGenres({ currentFilmGenre_ids = [] }) {
   return (
-    <div>
+    <React.Fragment>
       {genres
         .filter(e => {
           if (currentFilmGenre_ids.includes(e.id)) {
@@ -21,7 +21,7 @@ function ModalGenres({ currentFilmGenre_ids = [] }) {
             </span>
           );
         })}
-    </div>
+    </React.Fragment>
   );
 }
 export default ModalGenres;

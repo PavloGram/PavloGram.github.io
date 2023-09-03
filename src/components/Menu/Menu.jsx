@@ -7,7 +7,7 @@ function Menu() {
         <MenuLink href="/index.html">home</MenuLink>
       </MenuItem>
       <MenuItem>
-        <MenuLink href="№">my library</MenuLink>
+        <MenuLink href="#">my library</MenuLink>
       </MenuItem>
     </MenuList>
   )}
