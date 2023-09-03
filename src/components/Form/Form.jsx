@@ -1,8 +1,7 @@
 import React from 'react'
 
 import { SearchForm, SearchFormButton, SearchFormInput, SearchFormWarningText } from './FormStyled'
-// import searchImg from '../../images/header/search.svg'
-// import searchIcon from '../../images/icons.svg#icon-logo'
+
 import { useState } from "react"
 import fetchFilms from "../../js/fetchFilms"
 import SearchIcon from '../UI/SearchIcon/SearchIcon'
