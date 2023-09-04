@@ -1,5 +1,7 @@
 export function detectIdInArrey(watchedArrey, currentFilm) {
-  if (watchedArrey.includes(currentFilm.id)) {
+  let arrey = []; 
+  arrey = watchedArrey 
+  if (arrey.includes(currentFilm.id)) {
     return true;
   } else {
     return false;
