@@ -18,6 +18,7 @@ import { changeLocalStorage } from '../../js/changeLocalStorage';
 import ModalList from '../ModalList/ModalList';
 import { localStorageParse } from '../../js/localStorageParce';
 import { detectIdInArrey } from '../../js/detectIdInArrey';
+import React from 'react'
 
 const LOCAL_STORAGE_WATCHED_KEY = 'watched';
 const LOCAL_STORAGE_QUEUE_KEY = 'queue';
@@ -29,6 +30,7 @@ function Modal({ active, setActive, currentFilm }) {
   let queueArrey = localStorageParse(LOCAL_STORAGE_QUEUE_KEY);
   let isWatched = detectIdInArrey(watchedArrey, currentFilm);
   let isQueue = detectIdInArrey(queueArrey, currentFilm);
+  console.log(watchedArrey)
 
   function handleChangeWatchedList() {
     setToggle(!toggle);

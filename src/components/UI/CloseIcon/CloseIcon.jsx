@@ -1,5 +1,5 @@
 import { CloseBtnIcon } from "./CloseIconstyle";
-
+import React from 'react'
 function CloseIcon() {
   return (
     <CloseBtnIcon xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="current">

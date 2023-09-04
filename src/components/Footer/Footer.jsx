@@ -1,5 +1,5 @@
 import {FooterUnicodeElement, FooterContainer, FootertText, FooterLink } from "./FooterStyles"
-
+import React from 'react'
 
 function Footer(){
    

@@ -1,3 +1,4 @@
+import React from 'react'
 import {HeaderLogo, HeaderImg, HeaderLogoText} from './LogoStyled';
 import logoImage from '../../images/header/logoo.svg'
 

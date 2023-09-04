@@ -1,5 +1,6 @@
 import { MainContainer } from './MainStyled';
 import CardContainer from '../CardContainer/CardContainer';
+import React from 'react'
 
 
 

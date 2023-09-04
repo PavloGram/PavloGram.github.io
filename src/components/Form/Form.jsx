@@ -1,3 +1,4 @@
+import React from 'react'
 import { SearchForm, SearchFormButton, SearchFormInput, SearchFormWarningText } from './FormStyled'
 // import searchImg from '../../images/header/search.svg'
 // import searchIcon from '../../images/icons.svg#icon-logo'
@@ -32,7 +33,7 @@ function Form({setFilm}){
   }
 
     return(
-     <>
+     <React.Fragment>
      <SearchForm>
           <SearchFormInput type="text" onChange={changeInput} name='searchInput' placeholder="Movie search"></SearchFormInput>
           <SearchFormButton type="submit" onClick={hanleChange}><SearchIcon></SearchIcon></SearchFormButton>
@@ -40,7 +41,7 @@ function Form({setFilm}){
        
           <SearchFormWarningText>We couldn't find the movie <br/>
           Please try another value</SearchFormWarningText>
-        </>
+        </React.Fragment>
     )
 }
 

@@ -1,5 +1,5 @@
 import { SearchIconStyle } from "./SearchIconStyle";
-
+import React from 'react'
 
 function SearchIcon() {
   return (

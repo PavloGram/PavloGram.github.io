@@ -12,10 +12,11 @@ import {
   CardDiscriptionText,
 } from './CardListingStyled';
 import { genres } from '../../data/genres';
+import React from 'react';
 
 function CardListing({ filmInfo, setActive, setCurrentFilm, isActivModal }) {
   return (
-    <>
+    <React.Fragment>
       <CardList>
         {filmInfo.map(el => (
           <CardItem
@@ -67,7 +68,7 @@ function CardListing({ filmInfo, setActive, setCurrentFilm, isActivModal }) {
         ))}
       </CardList>
       {/* <Modal active={isActivModal} setActive={setIsActivModal}></Modal> */}
-    </>
+    </React.Fragment>
   );
 }
 

@@ -5,6 +5,7 @@ import GlobalStyle from "./js/GlobalStyle";
 import { styled } from "styled-components";
 import { useState } from "react";
 import Modal from "./components/Modal/Modal";
+import React from 'react'
 
 const Wrapper = styled.div`
 min-height: 100vh;
