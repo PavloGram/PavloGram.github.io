@@ -1,7 +1,5 @@
-
 import { styled } from "styled-components";
-const headerMob = require('../../images/header/header-bg-mob.jpg');
-
+const headerMob = require("../../images/header/header-bg-mob.jpg");
 
 const HeaderContainer = styled.header`
   width: 280px;

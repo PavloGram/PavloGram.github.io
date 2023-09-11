@@ -1,6 +1,6 @@
-
 import ISetFilm from "../../types/ISetFilm";
 import Form from "../Form/Form";
+import Logo from "../Logo/Logo";
 import Menu from "../Meny/Menu";
 import { HeaderContainer, Nav } from "./HeaderStyle";
 
@@ -11,6 +11,7 @@ function Header({ setFilm }: ISetFilm) {
         <Menu />
         <Form setFilm={setFilm} />
       </Nav>
+      <Logo/>
     </HeaderContainer>
   );
 }

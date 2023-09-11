@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
- 
- const GlobalStyle = createGlobalStyle`
+
+const GlobalStyle = createGlobalStyle`
  
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
@@ -334,6 +334,6 @@ template {
 [hidden] {
   display: none;
 }
-`
+`;
 
 export default GlobalStyle;

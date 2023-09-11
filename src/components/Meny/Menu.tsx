@@ -1,4 +1,4 @@
-import {MenuItem, MenuLink, MenuList} from './MenuStyle'
+import { MenuItem, MenuLink, MenuList } from "./MenuStyle";
 function Menu() {
   return (
     <MenuList>
@@ -9,5 +9,6 @@ function Menu() {
         <MenuLink href="№">my library</MenuLink>
       </MenuItem>
     </MenuList>
-  )}
-  ;export default Menu;
+  );
+}
+export default Menu;

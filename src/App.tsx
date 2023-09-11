@@ -16,7 +16,7 @@ const Wrapper = styled.div`
 function App() {
   const [film, setFilm] = useState([]);
   const [isActivModal, setIsActivModal] = useState(false);
-  const [currentFilm, setCurrentFilm] = useState<IFilm>(Object); 
+  const [currentFilm, setCurrentFilm] = useState<IFilm>(Object);
 
   return (
     <Wrapper>
@@ -29,7 +29,11 @@ function App() {
         setCurrentFilm={setCurrentFilm}
       />
       <Footer />
-      <Modal currentFilm={currentFilm}  isActivModal={isActivModal} setIsActivModal={setIsActivModal}></Modal>
+      <Modal
+        currentFilm={currentFilm}
+        isActivModal={isActivModal}
+        setIsActivModal={setIsActivModal}
+      ></Modal>
       <GlobalStyle />
     </Wrapper>
   );

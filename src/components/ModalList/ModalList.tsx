@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
 import {
   ModalItem,
   ModalTextTitle,
   ModalTextDiscription,
   ModalTextChangeBg,
   ModalTansformTextToUpperCase,
-} from './ModalListStyle';
-import ModalGenres from '../ModalGenres/ModalGenres';
+} from "./ModalListStyle";
+import ModalGenres from "../ModalGenres/ModalGenres";
 
 function ModalList({ currentFilm }: any) {
   return (
@@ -15,10 +15,10 @@ function ModalList({ currentFilm }: any) {
         <ModalTextTitle>Vote / Votes</ModalTextTitle>
         <ModalTextDiscription>
           <ModalTextChangeBg>
-            {Number(currentFilm.vote_average).toFixed(1)}{' '}
+            {Number(currentFilm.vote_average).toFixed(1)}{" "}
           </ModalTextChangeBg>
           / {currentFilm.vote_count}
-        </ModalTextDiscription>{' '}
+        </ModalTextDiscription>{" "}
       </ModalItem>
       <ModalItem>
         <ModalTextTitle>Popularity</ModalTextTitle>
@@ -29,7 +29,7 @@ function ModalList({ currentFilm }: any) {
       <ModalItem>
         <ModalTextTitle>Original Title</ModalTextTitle>
         <ModalTextDiscription>
-          {' '}
+          {" "}
           <ModalTansformTextToUpperCase>
             {currentFilm.original_title}
           </ModalTansformTextToUpperCase>

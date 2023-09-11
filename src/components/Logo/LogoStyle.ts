@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-const logoImage = require("../../images/header/logoo.svg");
+
 
 const HeaderLogo = styled.div`
   margin-top: 294px;
@@ -21,4 +21,4 @@ const HeaderLogoText = styled.p`
   line-height: normal;
   margin: 0;
 `;
-export { HeaderLogo, HeaderImg, HeaderLogoText, logoImage };
+export { HeaderLogo, HeaderImg, HeaderLogoText};

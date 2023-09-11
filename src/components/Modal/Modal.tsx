@@ -51,6 +51,7 @@ function Modal({ isActivModal, setIsActivModal, currentFilm }: IModal) {
   }
   function changeActive() {
     setIsActivModal(!isActivModal);
+    console.log("+");
   }
 
   return (

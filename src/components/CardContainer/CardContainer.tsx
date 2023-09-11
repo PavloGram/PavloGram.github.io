@@ -3,7 +3,6 @@ import IMainPropType from "../../types/IMainPropType";
 import fetchFilms from "../../ts/fetchFilms";
 import CardList from "../CardList/CardList";
 
-
 function CardContainer({
   film,
   setFilm,
@@ -14,7 +13,7 @@ function CardContainer({
   useEffect(() => {
     fetchFilms()
       .then((res) => {
-       return setFilm(res.results);
+        return setFilm(res.results);
       })
       .catch((er) => {
         console.log(er.message);
@@ -22,12 +21,12 @@ function CardContainer({
   }, [setFilm]);
 
   return (
-    
-    <CardList 
-     film={film}
-    setIsActivModal={setIsActivModal}
-    isActivModal={isActivModal}
-    setCurrentFilm={setCurrentFilm}/>
+    <CardList
+      film={film}
+      setIsActivModal={setIsActivModal}
+      isActivModal={isActivModal}
+      setCurrentFilm={setCurrentFilm}
+    />
   );
 }
 

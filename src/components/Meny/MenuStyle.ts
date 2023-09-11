@@ -1,4 +1,4 @@
-import { styled } from 'styled-components';
+import { styled } from "styled-components";
 
 const MenuList = styled.ul`
   display: flex;
@@ -11,10 +11,10 @@ const MenuList = styled.ul`
 const MenuItem = styled.li``;
 const MenuLink = styled.a`
   display: block;
-  
+
   background: white;
   color: inherit;
-  
+
   margin-right: 4px;
   padding: 10px 22px 10px 22px;
   border-radius: 100px;
@@ -30,6 +30,5 @@ const MenuLink = styled.a`
     color: white;
   }
 `;
-
 
 export { MenuItem, MenuLink, MenuList };

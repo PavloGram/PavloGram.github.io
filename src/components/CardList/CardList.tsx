@@ -39,8 +39,6 @@ function CardList({
   setIsActivModal,
   isActivModal,
 }: ICardList) {
-
-  
   return (
     <React.Fragment>
       <Card>
