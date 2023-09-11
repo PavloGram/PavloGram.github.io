@@ -1,17 +1,13 @@
-import { styled } from "styled-components";
-import GlobalStyle from "./ts/GlobalStyle";
+import GlobalStyle from "../../ts/GlobalStyle";
 import { useState } from "react";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-import Main from "./components/Main/Main";
-import Modal from "./components/Modal/Modal";
-import IFilm from "./types/IFilm";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
+import Main from "../Main/Main";
+import Modal from "../Modal/Modal";
+import IFilm from "../../types/IFilm";
+import Wrapper from "./AppStyle";
 
-const Wrapper = styled.div`
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-`;
+
 
 function App() {
   const [film, setFilm] = useState([]);
