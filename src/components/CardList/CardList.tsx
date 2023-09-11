@@ -15,16 +15,36 @@ import {
 } from "./CardListStyle";
 import React from "react";
 
+interface IFilm {
+  adult: boolean;
+  backdrop_path: string;
+  genre_ids: [];
+  id: number;
+  media_type: string;
+  original_language: string;
+  original_title: string;
+  overview: string;
+  popularity: number;
+  poster_path: string;
+  release_date: string;
+  title: string;
+  video: boolean;
+  vote_average: number;
+  vote_count: number;
+}
+
 function CardList({
   film,
   setCurrentFilm,
   setIsActivModal,
   isActivModal,
 }: ICardList) {
+
+  
   return (
     <React.Fragment>
-      {/* <Card>
-        {film.map((el) => (
+      <Card>
+        {film.map((el: IFilm) => (
           <CardItem
             key={el.id}
             onClick={() => {
@@ -48,7 +68,7 @@ function CardList({
                 <CardDiscriptionList>
                   {genres
                     .filter((e) => {
-                      if (el.genre_ids.includes(e.id)) {
+                      if (el.genre_ids.includes(e.id as never)) {
                         return e;
                       } else {
                         return null;
@@ -58,7 +78,7 @@ function CardList({
                     .map((et, index) => (
                       <CardDiscriptionItem key={et.id}>
                         <CardDiscriptionText>
-                          {el.genre_ids.length !== 1 && index !== 1
+                          {Number(el.genre_ids.length) !== 1 && index !== 1
                             ? `${et.genre}, `
                             : ` ${et.genre} |`}
                         </CardDiscriptionText>
@@ -72,7 +92,7 @@ function CardList({
             </CardThumb>
           </CardItem>
         ))}
-      </Card> */}
+      </Card>
     </React.Fragment>
   );
 }

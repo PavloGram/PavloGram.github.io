@@ -13,11 +13,10 @@ function CardContainer({
 }: IMainPropType) {
   useEffect(() => {
     fetchFilms()
-      .then((res: any) => {
-        console.log(res.results)
-        return setFilm(res.results);
+      .then((res) => {
+       return setFilm(res.results);
       })
-      .catch((er: any) => {
+      .catch((er) => {
         console.log(er.message);
       });
   }, [setFilm]);
