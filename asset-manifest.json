@@ -1,7 +1,12 @@
 {
-  "main.js": "static/js/main.9cf63f47.js",
-  "main.js.map": "static/js/main.9cf63f47.js.map",
-  "static\\media\\candy-cane.jpg": "static/media/candy-cane.a043de19.jpg",
-  "static\\media\\header-bg-mob.jpg": "static/media/header-bg-mob.45894126.jpg",
-  "static\\media\\logoo.svg": "static/media/logoo.a1571863.svg"
+  "files": {
+    "main.js": "/static/js/main.b2196219.js",
+    "static/media/candy-cane.jpg": "/static/media/candy-cane.a8f606e5ae2035f481ce.jpg",
+    "static/media/header-bg-mob.jpg": "/static/media/header-bg-mob.810a8df6eedc0415583d.jpg",
+    "index.html": "/index.html",
+    "main.b2196219.js.map": "/static/js/main.b2196219.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.b2196219.js"
+  ]
 }
