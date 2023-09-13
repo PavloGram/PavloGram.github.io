@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import IMainPropType from "../../types/IMainPropType";
 import fetchFilms from "../../ts/fetchFilms";
 import CardList from "../CardList/CardList";
+import React from "react";
 
 function CardContainer({
   film,

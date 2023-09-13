@@ -1,6 +1,6 @@
 import { genres } from "../../ts/genres";
 import ICardList from "../../types/ICardList";
-import candyCane from "../../images/candy-cane.jpg";
+import IFilm from "../../types/IFilm";
 
 import {
   Card,
@@ -12,27 +12,11 @@ import {
   CardDiscriptionList,
   CardDiscriptionItem,
   CardDiscriptionText,
-
+  candyCane,
 } from "./CardListStyle";
 import React from "react";
 
-interface IFilm {
-  adult: boolean;
-  backdrop_path: string;
-  genre_ids: [];
-  id: number;
-  media_type: string;
-  original_language: string;
-  original_title: string;
-  overview: string;
-  popularity: number;
-  poster_path: string;
-  release_date: string;
-  title: string;
-  video: boolean;
-  vote_average: number;
-  vote_count: number;
-}
+
 
 function CardList({
   film,

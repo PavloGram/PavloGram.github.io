@@ -1,6 +1,7 @@
 import { MainContainer } from "./MainStyle";
 import IMainPropType from "../../types/IMainPropType";
 import CardContainer from "../CardContainer/CardContainer";
+import React from "react";
 
 function Main({
   film,

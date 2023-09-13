@@ -20,7 +20,6 @@ const SearchFormInput = styled.input`
   font-weight: 400;
   font-size: 12px;
   line-height: normal;
-
   width: 220px;
 
   background: #ffffff;

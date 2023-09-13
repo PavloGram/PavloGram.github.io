@@ -1,5 +1,5 @@
 import { css, styled } from "styled-components";
-
+const candyCane = require("../../images/candy-cane.jpg");
 
 interface prop {
   $isActivModal: boolean;
@@ -111,4 +111,5 @@ export {
   ModalPoster,
   ModalTitle,
   ModalButtonWrapper,
+  candyCane,
 };

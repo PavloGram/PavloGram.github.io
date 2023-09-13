@@ -3,6 +3,7 @@ import Form from "../Form/Form";
 import Logo from "../Logo/Logo";
 import Menu from "../Meny/Menu";
 import { HeaderContainer, Nav } from "./HeaderStyle";
+import React from "react";
 
 function Header({ setFilm }: ISetFilm) {
   return (

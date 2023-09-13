@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-
+const candyCane = require("../../images/candy-cane.jpg");
 const Card = styled.ul`
   margin-top: 20px;
   margin-bottom: 20px;
@@ -66,5 +66,5 @@ export {
   Card,
   CardThumb,
   CardTitle,
-  
+  candyCane,
 };

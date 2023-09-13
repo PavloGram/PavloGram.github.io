@@ -4,6 +4,7 @@ import {
   FootertText,
   FooterLink,
 } from "./FooterStyle";
+import React from "react";
 
 function Footer() {
   return (

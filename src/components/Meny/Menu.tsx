@@ -1,4 +1,5 @@
 import { MenuItem, MenuLink, MenuList } from "./MenuStyle";
+import React from "react";
 function Menu() {
   return (
     <MenuList>
