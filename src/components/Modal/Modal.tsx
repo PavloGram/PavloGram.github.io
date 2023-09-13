@@ -8,8 +8,7 @@ import {
   ModalPoster,
   ModalTitle,
   ModalButtonWrapper,
-  candyCane,
-} from "./ModalStyle";
+  } from "./ModalStyle";
 
 import { useState } from "react";
 import ModalList from "../ModalList/ModalList";
@@ -19,6 +18,7 @@ import { changeLocalStorage } from "../../ts/changeLocalStorage";
 import { localStorageParse } from "../../ts/localStorageParse";
 import { detectIdInArrey } from "../../ts/detectIdInArrey";
 import IModal from "../../types/IModal";
+import candyCane from "../../images/candy-cane.jpg";
 
 const LOCAL_STORAGE_WATCHED_KEY = "watched";
 const LOCAL_STORAGE_QUEUE_KEY = "queue";
@@ -51,8 +51,7 @@ function Modal({ isActivModal, setIsActivModal, currentFilm }: IModal) {
   }
   function changeActive() {
     setIsActivModal(!isActivModal);
-    console.log("+");
-  }
+    }
 
   return (
     <ModalContainer $isActivModal={isActivModal} onClick={changeActive}>

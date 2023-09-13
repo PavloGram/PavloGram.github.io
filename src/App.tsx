@@ -1,11 +1,11 @@
-import GlobalStyle from "../../ts/GlobalStyle";
+import GlobalStyle from "./ts/GlobalStyle";
 import { useState } from "react";
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
-import Main from "../Main/Main";
-import Modal from "../Modal/Modal";
-import IFilm from "../../types/IFilm";
-import Wrapper from "./AppStyle";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import Main from "./components/Main/Main";
+import Modal from "./components/Modal/Modal";
+import IFilm from "./types/IFilm";
+import Wrapper from "./components/App/AppStyle";
 
 
 

@@ -1,5 +1,6 @@
 import { genres } from "../../ts/genres";
 import ICardList from "../../types/ICardList";
+import candyCane from "../../images/candy-cane.jpg";
 
 import {
   Card,
@@ -11,7 +12,7 @@ import {
   CardDiscriptionList,
   CardDiscriptionItem,
   CardDiscriptionText,
-  candyCane,
+
 } from "./CardListStyle";
 import React from "react";
 
