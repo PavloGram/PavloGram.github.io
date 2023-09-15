@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import IMainPropType from "../../types/IMainPropType";
 import fetchFilms from "../../ts/fetchFilms";
 import CardList from "../CardList/CardList";
@@ -11,9 +11,11 @@ function CardContainer({
   setCurrentFilm,
   isActivModal,
 }: IMainPropType) {
+  const [activeLoader, setActiveLoader] = useState(true)
   useEffect(() => {
     fetchFilms()
       .then((res) => {
+        setActiveLoader(false)
         return setFilm(res.results);
       })
       .catch((er) => {
@@ -23,6 +25,7 @@ function CardContainer({
 
   return (
     <CardList
+    activeLoader={activeLoader}
       film={film}
       setIsActivModal={setIsActivModal}
       isActivModal={isActivModal}

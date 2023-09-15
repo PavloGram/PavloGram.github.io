@@ -1,10 +1,11 @@
 import IFilm from "./IFilm";
 
 interface ICardList {
-    film: never[];
-    setIsActivModal: React.Dispatch<React.SetStateAction<boolean>>
-    setCurrentFilm:React.Dispatch<React.SetStateAction<IFilm>>
-    isActivModal: boolean;
-  }
+  activeLoader: boolean;
+  film: never[];
+  setIsActivModal: React.Dispatch<React.SetStateAction<boolean>>;
+  setCurrentFilm: React.Dispatch<React.SetStateAction<IFilm>>;
+  isActivModal: boolean;
+}
 
-  export default ICardList
+export default ICardList;

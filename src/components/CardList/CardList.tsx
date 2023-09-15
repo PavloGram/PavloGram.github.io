@@ -1,3 +1,4 @@
+import Loader from "../../UI/Loader/Loader";
 import { genres } from "../../ts/genres";
 import ICardList from "../../types/ICardList";
 import IFilm from "../../types/IFilm";
@@ -16,9 +17,8 @@ import {
 } from "./CardListStyle";
 import React from "react";
 
-
-
 function CardList({
+  activeLoader,
   film,
   setCurrentFilm,
   setIsActivModal,
@@ -26,6 +26,7 @@ function CardList({
 }: ICardList) {
   return (
     <React.Fragment>
+      {activeLoader && <Loader />}
       <Card>
         {film.map((el: IFilm) => (
           <CardItem
