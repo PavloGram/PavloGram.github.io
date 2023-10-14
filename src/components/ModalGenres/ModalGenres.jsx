@@ -1,12 +1,12 @@
 import React from "react";
-import { genres } from "../../ts/genres";
+import { genres } from "../../js/genres";
 
 function ModalGenres({ currentFilmGenre_ids = [] }) {
   return (
     <React.Fragment>
       {genres
         .filter((e) => {
-          if (currentFilmGenre_ids.includes(e.id as never)) {
+          if (currentFilmGenre_ids.includes(e.id)) {
             return e;
           } else {
             return null;

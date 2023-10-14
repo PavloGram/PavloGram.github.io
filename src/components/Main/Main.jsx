@@ -1,18 +1,22 @@
 import { MainContainer } from "./MainStyle";
-import IMainPropType from "../../types/IMainPropType";
+
 import CardContainer from "../CardContainer/CardContainer";
 import React from "react";
 
 function Main({
+  currentPage,
+  setCurrentPage,
   film,
   setFilm,
   setIsActivModal,
   setCurrentFilm,
   isActivModal,
-}: IMainPropType) {
+}) {
   return (
     <MainContainer>
       <CardContainer
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
         film={film}
         setFilm={setFilm}
         setIsActivModal={setIsActivModal}

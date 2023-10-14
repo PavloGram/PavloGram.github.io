@@ -15,16 +15,15 @@ import { useState } from "react";
 import ModalList from "../ModalList/ModalList";
 import Button from "../../UI/Button/Button";
 import CloseIcon from "../../UI/CloseIcon/CloseIcon";
-import { changeLocalStorage } from "../../ts/changeLocalStorage";
-import { localStorageParse } from "../../ts/localStorageParse";
-import { detectIdInArrey } from "../../ts/detectIdInArrey";
-import IModal from "../../types/IModal";
+import { changeLocalStorage } from "../../js/changeLocalStorage";
+import { localStorageParse } from "../../js/localStorageParse";
+import { detectIdInArrey } from "../../js/detectIdInArrey";
 import React from "react";
 
 const LOCAL_STORAGE_WATCHED_KEY = "watched";
 const LOCAL_STORAGE_QUEUE_KEY = "queue";
 
-function Modal({ isActivModal, setIsActivModal, currentFilm }: IModal) {
+function Modal({ isActivModal, setIsActivModal, currentFilm }) {
   const [toggle, setToggle] = useState(false);
 
   let watchedArrey = localStorageParse(LOCAL_STORAGE_WATCHED_KEY);
@@ -66,17 +65,17 @@ function Modal({ isActivModal, setIsActivModal, currentFilm }: IModal) {
         </ModalCloseBtn>
         <ModalPoster
           src={
-            currentFilm.poster_path
+            currentFilm?.poster_path
               ? `https://image.tmdb.org/t/p/w500${currentFilm.poster_path}`
               : candyCane
           }
         ></ModalPoster>
         <ModalDiscription>
-          <ModalTitle>{currentFilm.original_title}</ModalTitle>
+          <ModalTitle>{currentFilm?.original_title}</ModalTitle>
           <ModalList currentFilm={currentFilm} />
 
           <ModalDiscriptionTitle>About</ModalDiscriptionTitle>
-          <ModalDiscriptionText>{currentFilm.overview}</ModalDiscriptionText>
+          <ModalDiscriptionText>{currentFilm?.overview}</ModalDiscriptionText>
           <ModalButtonWrapper>
             <Button
               change={handleChangeWatchedList}

@@ -1,35 +1,42 @@
 import { useEffect, useState } from "react";
-import IMainPropType from "../../types/IMainPropType";
-import fetchFilms from "../../ts/fetchFilms";
+
+import fetchFilms from "../../js/fetchFilms";
 import CardList from "../CardList/CardList";
-import React from "react";
 
 function CardContainer({
+  currentPage,
+  setCurrentPage,
   film,
   setFilm,
   setIsActivModal,
   setCurrentFilm,
   isActivModal,
-}: IMainPropType) {
-  const [activeLoader, setActiveLoader] = useState(true)
+}) {
+  const [activeLoader, setActiveLoader] = useState(true);
+
   useEffect(() => {
-    fetchFilms()
+    fetchFilms(undefined, currentPage)
       .then((res) => {
-        setActiveLoader(false)
+        setActiveLoader(false);
+        setCurrentPage(res.page)
+        console.log(res)
         return setFilm(res.results);
       })
       .catch((er) => {
+        setActiveLoader(false);
         console.log(er.message);
       });
-  }, [setFilm]);
+  }, [setFilm, setCurrentPage, currentPage]);
 
   return (
     <CardList
-    activeLoader={activeLoader}
+      activeLoader={activeLoader}
       film={film}
       setIsActivModal={setIsActivModal}
       isActivModal={isActivModal}
       setCurrentFilm={setCurrentFilm}
+      currentPage={currentPage}
+      setCurrentPage={setCurrentPage}
     />
   );
 }

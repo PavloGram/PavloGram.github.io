@@ -1,7 +1,7 @@
 import Loader from "../../UI/Loader/Loader";
-import { genres } from "../../ts/genres";
-import ICardList from "../../types/ICardList";
-import IFilm from "../../types/IFilm";
+import Pagination from "../../UI/Pagination/Pagination";
+import { genres } from "../../js/genres";
+
 
 import {
   Card,
@@ -15,20 +15,23 @@ import {
   CardDiscriptionText,
   candyCane,
 } from "./CardListStyle";
-import React from "react";
+
 
 function CardList({
+  setCurrentPage,
+  currentPage,
   activeLoader,
   film,
   setCurrentFilm,
   setIsActivModal,
   isActivModal,
-}: ICardList) {
+}) {
+
   return (
-    <React.Fragment>
+    <>
       {activeLoader && <Loader />}
       <Card>
-        {film.map((el: IFilm) => (
+        {film.map((el) => (
           <CardItem
             key={el.id}
             onClick={() => {
@@ -52,7 +55,7 @@ function CardList({
                 <CardDiscriptionList>
                   {genres
                     .filter((e) => {
-                      if (el.genre_ids.includes(e.id as never)) {
+                      if (el.genre_ids.includes(e.id)) {
                         return e;
                       } else {
                         return null;
@@ -77,7 +80,8 @@ function CardList({
           </CardItem>
         ))}
       </Card>
-    </React.Fragment>
+      <Pagination film={film} currentPage={currentPage} setCurrentPage={setCurrentPage} />
+    </>
   );
 }
 

@@ -1,11 +1,9 @@
 import { css, styled } from "styled-components";
 const candyCane = require("../../images/candy-cane.jpg");
 
-interface prop {
-  $isActivModal: boolean;
-}
 
-const ModalContainer = styled.div<prop>`
+
+const ModalContainer = styled.div`
   height: 100vh;
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.5);
@@ -27,7 +25,7 @@ const ModalContainer = styled.div<prop>`
       pointer-events: all;
     `}
 `;
-const ModalContent = styled.div<prop>`
+const ModalContent = styled.div`
   width: 280px;
   margin-right: 15px;
   padding: 48px 20px 40px 20px;

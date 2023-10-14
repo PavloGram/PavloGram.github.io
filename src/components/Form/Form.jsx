@@ -9,29 +9,27 @@ import {
 import { useState } from "react";
 
 import SearchIcon from "../../UI/SearchIcon/SearchIcon";
-import fetchFilms from "../../ts/fetchFilms";
-import ISetFilm from "../../types/ISetFilm";
+import fetchFilms from "../../js/fetchFilms";
 
-function Form({ setFilm }: ISetFilm) {
+
+function Form({ setFilm, currentPage, setCurrentPage }) {
   const [value, setValue] = useState("");
 
-  function hanleChange(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+  function hanleChange(e) {
     e.preventDefault();
-    console.log(value);
 
-    fetchFilms(value)
-      .then((res: any) => {
-        console.log(res.results);
+    fetchFilms(value, 3)
+      .then((res) => {
+        console.log(res);
         return setFilm(res.results);
       })
-      .catch((er: any) => {
+      .catch((er) => {
         console.log(er.message);
       });
   }
 
-  function changeInput(e: React.ChangeEvent<HTMLInputElement>) {
+  function changeInput(e) {
     setValue(e.target.value);
-    // console.log(e.target.value)
   }
 
   return (
