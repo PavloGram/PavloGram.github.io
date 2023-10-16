@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   SearchForm,
   SearchFormButton,
@@ -6,30 +6,25 @@ import {
   SearchFormWarningText,
 } from "./FormStyle";
 
-import { useState } from "react";
+
 
 import SearchIcon from "../../UI/SearchIcon/SearchIcon";
-import fetchFilms from "../../js/fetchFilms";
 
 
-function Form({ setFilm, currentPage, setCurrentPage }) {
-  const [value, setValue] = useState("");
+function Form({setValue, setFilm, currentPage, setCurrentPage }) {
+
+  const [inputValue, setInputValue] = useState("")
 
   function hanleChange(e) {
     e.preventDefault();
-
-    fetchFilms(value, 3)
-      .then((res) => {
-        console.log(res);
-        return setFilm(res.results);
-      })
-      .catch((er) => {
-        console.log(er.message);
-      });
+    setValue(inputValue);
+    setCurrentPage(1)
+    // return setFilm(e.target.value);
+   
   }
 
   function changeInput(e) {
-    setValue(e.target.value);
+    setInputValue(e.target.value);
   }
 
   return (

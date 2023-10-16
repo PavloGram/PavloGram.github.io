@@ -1,22 +1,23 @@
-import { MainContainer } from "./MainStyle";
-
-import CardContainer from "../CardContainer/CardContainer";
 import React from "react";
+import Header from "../../components/Header/Header";
+import Main from "../../components/Main/Main";
 
-function Main({
-  value,
+function HomePage({
+  setValue,
   currentPage,
   setCurrentPage,
-  film,
   setFilm,
+  value,
+  film,
   setIsActivModal,
-  setCurrentFilm,
   isActivModal,
+  setCurrentFilm,
 }) {
   return (
-    <MainContainer>
-      <CardContainer
-      value={value}
+    <>
+     
+      <Main
+        value={value}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
         film={film}
@@ -25,7 +26,8 @@ function Main({
         isActivModal={isActivModal}
         setCurrentFilm={setCurrentFilm}
       />
-    </MainContainer>
+    </>
   );
 }
-export default Main;
+
+export default HomePage;

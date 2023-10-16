@@ -15,7 +15,7 @@ const ModalContainer = styled.div`
   justify-content: center;
   pointer-events: none;
   opacity: 0;
-
+  z-index: 100;
   transition: 0.5s;
 
   ${(props) =>

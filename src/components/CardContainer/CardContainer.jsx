@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-
 import fetchFilms from "../../js/fetchFilms";
 import CardList from "../CardList/CardList";
+import Loader from "../../UI/Loader/Loader";
 
 function CardContainer({
+  value,
   currentPage,
   setCurrentPage,
   film,
@@ -13,31 +14,41 @@ function CardContainer({
   isActivModal,
 }) {
   const [activeLoader, setActiveLoader] = useState(true);
+  const [totalPages, setTotalPages] = useState(0);
 
   useEffect(() => {
-    fetchFilms(undefined, currentPage)
+    fetchFilms(value, currentPage)
       .then((res) => {
-        setActiveLoader(false);
-        setCurrentPage(res.page)
-        console.log(res)
+        setCurrentPage(res.page);
+        setTotalPages(res.total_pages);
+
         return setFilm(res.results);
       })
       .catch((er) => {
-        setActiveLoader(false);
         console.log(er.message);
+      })
+      .finally(() => {
+        setActiveLoader(false);
       });
-  }, [setFilm, setCurrentPage, currentPage]);
+  }, [setFilm, setCurrentPage, currentPage, value]);
 
   return (
-    <CardList
-      activeLoader={activeLoader}
-      film={film}
-      setIsActivModal={setIsActivModal}
-      isActivModal={isActivModal}
-      setCurrentFilm={setCurrentFilm}
-      currentPage={currentPage}
-      setCurrentPage={setCurrentPage}
-    />
+    <>
+      {activeLoader ? (
+        <Loader />
+      ) : (
+        <CardList
+          totalPages={totalPages}
+          activeLoader={activeLoader}
+          film={film}
+          setIsActivModal={setIsActivModal}
+          isActivModal={isActivModal}
+          setCurrentFilm={setCurrentFilm}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        />
+      )}
+    </>
   );
 }
 

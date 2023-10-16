@@ -1,4 +1,3 @@
-import Loader from "../../UI/Loader/Loader";
 import Pagination from "../../UI/Pagination/Pagination";
 import { genres } from "../../js/genres";
 
@@ -25,13 +24,14 @@ function CardList({
   setCurrentFilm,
   setIsActivModal,
   isActivModal,
+  totalPages
 }) {
 
   return (
     <>
-      {activeLoader && <Loader />}
+    
       <Card>
-        {film.map((el) => (
+        {film?.map((el) => (
           <CardItem
             key={el.id}
             onClick={() => {
@@ -80,7 +80,7 @@ function CardList({
           </CardItem>
         ))}
       </Card>
-      <Pagination film={film} currentPage={currentPage} setCurrentPage={setCurrentPage} />
+      <Pagination totalPages={totalPages} currentPage={currentPage} setCurrentPage={setCurrentPage} />
     </>
   );
 }
