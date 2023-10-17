@@ -2,8 +2,8 @@ import { styled } from "styled-components";
 
 
 const HeaderLogo = styled.div`
-  margin-top: 294px;
-
+  margin-top: auto;
+  
   display: flex;
   align-items: center;
   justify-content: center;

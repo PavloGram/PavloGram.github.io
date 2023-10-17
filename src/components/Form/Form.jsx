@@ -6,21 +6,19 @@ import {
   SearchFormWarningText,
 } from "./FormStyle";
 
-
-
 import SearchIcon from "../../UI/SearchIcon/SearchIcon";
+import { NavLink } from "react-router-dom";
 
-
-function Form({setValue, setFilm, currentPage, setCurrentPage }) {
-
-  const [inputValue, setInputValue] = useState("")
+function Form({ setValue, setFilm, currentPage, setCurrentPage }) {
+  const [inputValue, setInputValue] = useState("");
 
   function hanleChange(e) {
     e.preventDefault();
     setValue(inputValue);
-    setCurrentPage(1)
+    setInputValue("");
+
+    // setCurrentPage(1)
     // return setFilm(e.target.value);
-   
   }
 
   function changeInput(e) {
@@ -35,10 +33,15 @@ function Form({setValue, setFilm, currentPage, setCurrentPage }) {
           onChange={changeInput}
           name="searchInput"
           placeholder="Movie search"
+          value={inputValue}
         ></SearchFormInput>
-        <SearchFormButton type="submit" onClick={hanleChange}>
-          <SearchIcon></SearchIcon>
-        </SearchFormButton>
+        <NavLink to="/searchpage">
+          {" "}
+          <SearchIcon onClick={hanleChange}></SearchIcon>
+        </NavLink>
+        {/* <SearchFormButton type="submit" onClick={hanleChange}>
+        <NavLink to="/searchpage"> <SearchIcon></SearchIcon> </NavLink>
+        </SearchFormButton> */}
       </SearchForm>
 
       <SearchFormWarningText>

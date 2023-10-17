@@ -1,12 +1,10 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
 
-function MyLibraryPage() {
-  return (
-    <div><p>MyLibraryPage</p>
-        <Link to="/">Back</Link>
-    </div>
-  )
+import Main from "../../components/Main/Main";
+
+function MyLibraryPage({setCurrentPage}) {
+
+  return <Main setCurrentPage={setCurrentPage} />;
 }
 
-export default MyLibraryPage
+export default MyLibraryPage;

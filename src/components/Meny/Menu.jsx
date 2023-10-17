@@ -1,14 +1,16 @@
-import {  NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { MenuItem, MenuList } from "./MenuStyle";
 import React from "react";
 function Menu() {
+
+ 
   return (
     <MenuList>
       <MenuItem>
-        <NavLink className={({isActive})=> isActive ? "active-link" : "link" } to="/">home</NavLink>
+        <NavLink  className={({isActive})=> isActive ? "active-link" : "link" } to="/">home</NavLink>
       </MenuItem>
       <MenuItem>
-        <NavLink className={({isActive})=> isActive ? "active-link" : "link" } to="/mylibrary">my library</NavLink>
+        <NavLink  className={({isActive})=> isActive ? "active-link" : "link" } to="/mylibrary">my library</NavLink>
       </MenuItem>
       <style jsx="true">{`
         .link {

@@ -1,3 +1,4 @@
+import { useMatch } from "react-router";
 import Pagination from "../../UI/Pagination/Pagination";
 import { genres } from "../../js/genres";
 
@@ -17,6 +18,8 @@ import {
 
 
 function CardList({
+  filmsById,
+  setFilmsById,
   setCurrentPage,
   currentPage,
   activeLoader,
@@ -27,11 +30,14 @@ function CardList({
   totalPages
 }) {
 
+  const match = useMatch("/")
+  const cureentFilmsArrey = !match ? filmsById : film
+ 
   return (
     <>
     
       <Card>
-        {film?.map((el) => (
+        {cureentFilmsArrey?.map((el) => (
           <CardItem
             key={el.id}
             onClick={() => {
@@ -55,7 +61,7 @@ function CardList({
                 <CardDiscriptionList>
                   {genres
                     .filter((e) => {
-                      if (el.genre_ids.includes(e.id)) {
+                      if (el.genre_ids?.includes(e.id)) {
                         return e;
                       } else {
                         return null;

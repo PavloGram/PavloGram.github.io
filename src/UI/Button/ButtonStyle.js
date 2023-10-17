@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { css, styled } from "styled-components";
 
 export const ButtonStyle = styled.button`
 color: #B92F2C;
@@ -9,6 +9,12 @@ line-height: normal;
 text-transform: uppercase;
 
 padding: 9px 10px;
+
+${({value}) =>
+    value === "library" &&
+    css`
+      padding: 10px 24px;
+    `}
 border-radius: 100px;
 border: 1px solid #000000;
 cursor: pointer;

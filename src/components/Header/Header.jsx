@@ -4,22 +4,25 @@ import Logo from "../Logo/Logo";
 import Menu from "../Meny/Menu";
 import { HeaderContainer, Nav } from "./HeaderStyle";
 import React from "react";
+import MyLibraryButton from "../MyLibraryButton/MyLibraryButton";
 
 function Header({ setValue, setFilm, currentPage, setCurrentPage }) {
-  const match = useMatch("/")
-  console.log(match);
+  const match = useMatch("/mylibrary")
+
   return (
     <HeaderContainer>
       <Nav>
-        <Menu />
-        <Form
+        <Menu  />
+       {!match && <Form
           setValue={setValue}
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
           setFilm={setFilm}
-        />
+        />}
       </Nav>
       <Logo />
+      {match && <MyLibraryButton/>}
+
     </HeaderContainer>
   );
 }

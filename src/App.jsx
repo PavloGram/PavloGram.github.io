@@ -6,6 +6,7 @@ import MyLibraryPage from "./pages/MyLibraryPage/MyLibraryPage";
 import { Route, Routes } from "react-router";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import Layout from "./components/Layout/Layout";
+import SearchPage from "./pages/SearchPage/SearchPage";
 
 const Wrapper = styled.div`
   min-height: 100vh;
@@ -14,45 +15,56 @@ const Wrapper = styled.div`
 `;
 
 function App() {
-  const [film, setFilm] = useState([]);
+  const [film, setFilm] = useState(null);
   const [isActivModal, setIsActivModal] = useState(false);
   const [currentFilm, setCurrentFilm] = useState(null);
-  const [currentPage, setCurrentPage] = useState(0);
+  const [currentPage, setCurrentPage] = useState(film?.page);
   const [value, setValue] = useState(undefined);
 
   return (
     <Wrapper>
       <Routes>
-        <Route path="/" element={<Layout  currentFilm={currentFilm}
-        isActivModal={isActivModal}
-        setIsActivModal={setIsActivModal}
-        setValue={setValue}
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-        setFilm={setFilm}/>}>
         <Route
-          index
+          path="/"
           element={
-            <HomePage
+            <Layout
+              currentFilm={currentFilm}
+              isActivModal={isActivModal}
+              setIsActivModal={setIsActivModal}
               setValue={setValue}
               currentPage={currentPage}
               setCurrentPage={setCurrentPage}
               setFilm={setFilm}
-              value={value}
-              film={film}
-              setIsActivModal={setIsActivModal}
-              isActivModal={isActivModal}
-              setCurrentFilm={setCurrentFilm}
             />
           }
-        />
-        <Route path="/mylibrary" element={<MyLibraryPage />} />
-        <Route path="*" element={<NotFoundPage />} />
+        >
+          <Route
+            index
+            element={
+              <HomePage
+                setValue={setValue}
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+                setFilm={setFilm}
+                value={value}
+                film={film}
+                setIsActivModal={setIsActivModal}
+                isActivModal={isActivModal}
+                setCurrentFilm={setCurrentFilm}
+              />
+            }
+          />
+          <Route
+            path="mylibrary"
+            element={<MyLibraryPage setCurrentPage={setCurrentPage} />}
+          />
+           <Route
+            path="searchpage"
+            element={<SearchPage setCurrentPage={setCurrentPage} />}
+          />
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
-
-      
-    
     </Wrapper>
   );
 }

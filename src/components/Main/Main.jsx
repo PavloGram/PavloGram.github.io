@@ -4,7 +4,7 @@ import CardContainer from "../CardContainer/CardContainer";
 import React from "react";
 
 function Main({
-  value,
+   value,
   currentPage,
   setCurrentPage,
   film,
