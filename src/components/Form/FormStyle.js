@@ -11,8 +11,15 @@ const SearchFormButton = styled.button`
 `;
 
 const SearchFormWarningText = styled.p`
-  display: none;
-  color: white;
+  color: #fff;
+  font-family: Roboto;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 155px;
+  margin-top: 8px;
+  margin-left: 14px;
 `;
 const SearchFormInput = styled.input`
   color: #000000;

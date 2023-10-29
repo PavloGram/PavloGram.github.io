@@ -19,11 +19,16 @@ import { changeLocalStorage } from "../../js/changeLocalStorage";
 import { localStorageParse } from "../../js/localStorageParse";
 import { detectIdInArrey } from "../../js/detectIdInArrey";
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { changeStateActive } from "../../rtk/reducers/isActiveModal";
 
 const LOCAL_STORAGE_WATCHED_KEY = "watched";
 const LOCAL_STORAGE_QUEUE_KEY = "queue";
 
-function Modal({ isActivModal, setIsActivModal, currentFilm }) {
+function Modal() {
+  const activeModal = useSelector((state) => state.ActiveModal.value);
+  const currentFilm = useSelector((state) => state.currentFilm.value);
+  const dispatch = useDispatch();
   const [toggle, setToggle] = useState(false);
 
   let watchedArrey = localStorageParse(LOCAL_STORAGE_WATCHED_KEY);
@@ -50,14 +55,13 @@ function Modal({ isActivModal, setIsActivModal, currentFilm }) {
     setToggle(!toggle);
   }
   function changeActive() {
-    setIsActivModal(!isActivModal);
-    console.log("+");
+    dispatch(changeStateActive());
   }
 
   return (
-    <ModalContainer $isActivModal={isActivModal} onClick={changeActive}>
+    <ModalContainer $isActivModal={activeModal} onClick={changeActive}>
       <ModalContent
-        $isActivModal={isActivModal}
+        $isActivModal={activeModal}
         onClick={(e) => e.stopPropagation()}
       >
         <ModalCloseBtn onClick={changeActive} type="button">

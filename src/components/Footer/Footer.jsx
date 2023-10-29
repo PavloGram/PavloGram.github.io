@@ -18,7 +18,7 @@ function Footer() {
           Developed by
           <FooterLink href="mailto:gramazorapavlo7@gmail.com">
             {" "}
-            Pavlo Gramazora
+            Pavlo Hramazhora
           </FooterLink>
         </span>
       </FootertText>

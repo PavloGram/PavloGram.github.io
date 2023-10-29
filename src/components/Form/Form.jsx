@@ -1,24 +1,27 @@
 import React, { useState } from "react";
 import {
   SearchForm,
-  SearchFormButton,
   SearchFormInput,
   SearchFormWarningText,
 } from "./FormStyle";
 
 import SearchIcon from "../../UI/SearchIcon/SearchIcon";
 import { NavLink } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { changeSearchValue } from "../../rtk/reducers/searchValue";
 
-function Form({ setValue, setFilm, currentPage, setCurrentPage }) {
+function Form() {
   const [inputValue, setInputValue] = useState("");
-
-  function hanleChange(e) {
+  const dispatch = useDispatch();
+  const responseData = useSelector((state) => state.responseData.value);
+  // console.log(responseData);
+  function handleChange(e) {
     e.preventDefault();
-    setValue(inputValue);
+    if (inputValue.trim() === "") {
+      return alert("putt text");
+    }
+    dispatch(changeSearchValue(inputValue));
     setInputValue("");
-
-    // setCurrentPage(1)
-    // return setFilm(e.target.value);
   }
 
   function changeInput(e) {
@@ -35,19 +38,27 @@ function Form({ setValue, setFilm, currentPage, setCurrentPage }) {
           placeholder="Movie search"
           value={inputValue}
         ></SearchFormInput>
-        <NavLink to="/searchpage">
+        <NavLink
+          style={{
+            position: "absolute",
+            right: "8px",
+            top: "50%",
+            transform: "translateY(-50%)",
+            cursor: "pointer",
+          }}
+          to="/searchpage"
+          onClick={handleChange}
+        >
           {" "}
-          <SearchIcon onClick={hanleChange}></SearchIcon>
+          <SearchIcon></SearchIcon>
         </NavLink>
-        {/* <SearchFormButton type="submit" onClick={hanleChange}>
-        <NavLink to="/searchpage"> <SearchIcon></SearchIcon> </NavLink>
-        </SearchFormButton> */}
       </SearchForm>
 
-      <SearchFormWarningText>
-        We couldn't find the movie <br />
-        Please try another value
-      </SearchFormWarningText>
+      {responseData?.total_results === 0 && (
+        <SearchFormWarningText>
+          Search result not successful. Enter the correct movie name.
+        </SearchFormWarningText>
+      )}
     </React.Fragment>
   );
 }

@@ -1,14 +1,25 @@
+import { useDispatch, useSelector } from "react-redux";
 import ResponsivePagination from "react-responsive-pagination";
 import "react-responsive-pagination/themes/classic.css";
+import { changeCurrentPage } from "../../rtk/reducers/currentPage";
+import { useState } from "react";
+import { useEffect } from "react";
 
-function Pagination({ totalPages, currentPage, setCurrentPage }) {
+function Pagination() {
+  const responseData = useSelector((state) => state.responseData.value);
+  const [page, setPage] = useState(responseData?.page);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(changeCurrentPage(page));
+  }, [dispatch, page]);
+
   return (
     <>
-      {totalPages !== 1 && (
+      {responseData?.total_pages !== 1 && (
         <ResponsivePagination
-          current={currentPage}
-          total={totalPages}
-          onPageChange={setCurrentPage}
+          current={responseData?.page}
+          total={responseData?.total_pages}
+          onPageChange={setPage}
         />
       )}
 

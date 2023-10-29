@@ -1,10 +1,10 @@
 import { styled } from "styled-components";
 
 const FooterContainer = styled.footer`
-  margin-right: auto;
-  margin-left: auto;
   background: #f7f7f7;
-  width: 280px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 `;
 const FootertText = styled.p`
   color: #545454;
@@ -15,6 +15,7 @@ const FootertText = styled.p`
   padding-top: 28px;
   padding-bottom: 28px;
   margin: 0;
+  width: 280px;
 
   display: flex;
   flex-wrap: wrap;

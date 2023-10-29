@@ -13,7 +13,8 @@ const LibraryButtonWrap = styled.div`
 function MyLibraryButton() {
   return (
     <LibraryButtonWrap>
-      <Button text="watched" value="library"/> <  Button text="queue"  value="library"/>
+      <Button text="watched" value="library" />
+      <Button text="queue" value="library" />
     </LibraryButtonWrap>
   );
 }

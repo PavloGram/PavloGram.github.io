@@ -1,7 +1,6 @@
-import { useMatch } from "react-router";
+// import { useMatch } from "react-router";
 import Pagination from "../../UI/Pagination/Pagination";
 import { genres } from "../../js/genres";
-
 
 import {
   Card,
@@ -15,34 +14,27 @@ import {
   CardDiscriptionText,
   candyCane,
 } from "./CardListStyle";
+import { useDispatch, useSelector } from "react-redux";
+import { changeFilm } from "../../rtk/reducers/currentFilm";
+import { changeStateActive } from "../../rtk/reducers/isActiveModal";
 
+function CardList() {
+  const responseData = useSelector((state) => state.responseData.value);
+  const value = Array.isArray(responseData) ? responseData : responseData?.results
+  const dispatch = useDispatch();
+  // const match = useMatch("/");
+  // const cureentFilmsArrey = !match ? filmsById : film
 
-function CardList({
-  filmsById,
-  setFilmsById,
-  setCurrentPage,
-  currentPage,
-  activeLoader,
-  film,
-  setCurrentFilm,
-  setIsActivModal,
-  isActivModal,
-  totalPages
-}) {
-
-  const match = useMatch("/")
-  const cureentFilmsArrey = !match ? filmsById : film
- 
   return (
     <>
-    
       <Card>
-        {cureentFilmsArrey?.map((el) => (
+        {value.map((el) => (
           <CardItem
             key={el.id}
             onClick={() => {
-              setCurrentFilm(el);
-              setIsActivModal(!isActivModal);
+              dispatch(changeFilm(el));
+
+              dispatch(changeStateActive());
             }}
           >
             <CardThumb>
@@ -86,7 +78,7 @@ function CardList({
           </CardItem>
         ))}
       </Card>
-      <Pagination totalPages={totalPages} currentPage={currentPage} setCurrentPage={setCurrentPage} />
+      <Pagination />
     </>
   );
 }

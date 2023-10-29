@@ -1,16 +1,34 @@
 import { NavLink } from "react-router-dom";
 import { MenuItem, MenuList } from "./MenuStyle";
 import React from "react";
+import { changeSearchValue } from "../../rtk/reducers/searchValue";
+import { useDispatch } from "react-redux";
+import { changeCurrentPage } from "../../rtk/reducers/currentPage";
 function Menu() {
+  const dispatch = useDispatch();
+  function handleClick() {
+    dispatch(changeSearchValue(null));
+    dispatch(changeCurrentPage(1));
+  }
 
- 
   return (
     <MenuList>
       <MenuItem>
-        <NavLink  className={({isActive})=> isActive ? "active-link" : "link" } to="/">home</NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? "active-link" : "link")}
+          to="/"
+          onClick={() => handleClick()}
+        >
+          home
+        </NavLink>
       </MenuItem>
       <MenuItem>
-        <NavLink  className={({isActive})=> isActive ? "active-link" : "link" } to="/mylibrary">my library</NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? "active-link" : "link")}
+          to="/mylibrary"
+        >
+          my library
+        </NavLink>
       </MenuItem>
       <style jsx="true">{`
         .link {

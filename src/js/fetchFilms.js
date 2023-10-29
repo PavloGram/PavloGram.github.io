@@ -8,36 +8,47 @@ async function fetchFilms(value, page = 1) {
     const searchParamsToQuery = new URLSearchParams({
       api_key: API_KEY,
       query: value,
-      page
+      page,
     });
     const url = `${BASE_URL_QUERY}?${searchParamsToQuery}`;
-
+    console.log(value);
     return fetch(url).then((response) => {
       if (!response.ok) {
         throw new Error(response.status);
       }
       return response.json();
     });
-  }   if (typeof value === Array) {
-    const searchParamsToQuery = new URLSearchParams({
-      api_key: API_KEY,
-      query: value,
-      page
-    });
-    const url = `${BASE_URL_QUERY}?${searchParamsToQuery}`;
+  } else if ( Array.isArray(value)  ) {
+    // const searchParamsToQuery = new URLSearchParams({
+    //   api_key: API_KEY,
+    //   query: value,
+    //   page
+    // });
+    console.log(value);
+    // const url = `${BASE_URL_QUERY}?${searchParamsToQuery}`;
+    return await Promise.all(
+      value.map(async (el) => {
+        const url = `https://api.themoviedb.org/3/movie/${el}?api_key=${API_KEY}`;
+        return await fetch(url).then((response) => {
+          if (!response.ok) {
+            throw new Error(response.status);
+          }
+          return response.json();
+        });
+      })
+    );
 
-    return fetch(url).then((response) => {
-      if (!response.ok) {
-        throw new Error(response.status);
-      }
-      return response.json();
-    });
-  } 
-  
-  else {
+    // return fetch(url).then((response) => {
+    //   if (!response.ok) {
+    //     throw new Error(response.status);
+    //   }
+    //   return response.json();
+    // });
+  } else {
+    console.log(value);
     const searchParamsToQuery = new URLSearchParams({
       api_key: API_KEY,
-      page
+      page,
     });
     const url = `${BASE_URL_POPULAR}?${searchParamsToQuery}`;
 

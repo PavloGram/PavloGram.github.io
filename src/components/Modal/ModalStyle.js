@@ -1,8 +1,6 @@
 import { css, styled } from "styled-components";
 const candyCane = require("../../images/candy-cane.jpg");
 
-
-
 const ModalContainer = styled.div`
   height: 100vh;
   width: 100vw;
@@ -27,7 +25,9 @@ const ModalContainer = styled.div`
 `;
 const ModalContent = styled.div`
   width: 280px;
-  margin-right: 15px;
+  display: block;
+
+  margin-right: 18px;
   padding: 48px 20px 40px 20px;
   background-color: white;
   transform: scale(0.5);

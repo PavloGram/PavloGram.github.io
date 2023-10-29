@@ -6,7 +6,7 @@ import { HeaderContainer, Nav } from "./HeaderStyle";
 import React from "react";
 import MyLibraryButton from "../MyLibraryButton/MyLibraryButton";
 
-function Header({ setValue, setFilm, currentPage, setCurrentPage }) {
+function Header() {
   const match = useMatch("/mylibrary")
 
   return (
@@ -14,10 +14,7 @@ function Header({ setValue, setFilm, currentPage, setCurrentPage }) {
       <Nav>
         <Menu  />
        {!match && <Form
-          setValue={setValue}
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-          setFilm={setFilm}
+       
         />}
       </Nav>
       <Logo />
