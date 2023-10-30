@@ -5,20 +5,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { changeData } from "../../rtk/reducers/responseData";
 import fetchFilms from "../../js/fetchFilms";
 import { useMatch } from "react-router";
-import { localStorageParse } from "../../js/localStorageParse";
-
-const LOCAL_STORAGE_WATCHED_KEY = "watched";
-const LOCAL_STORAGE_QUEUE_KEY = "queue";
 
 function Main() {
   const match = useMatch("/mylibrary");
-  const isAct = true;
-const dispatch = useDispatch();
+  const isAct = useSelector((state) => state.currentLibraryPage.value);
+  const dispatch = useDispatch();
 
-  let watchedArrey = localStorageParse(LOCAL_STORAGE_WATCHED_KEY);
-  let queueArrey = localStorageParse(LOCAL_STORAGE_QUEUE_KEY);
+  const watchedArrey = useSelector((state) => state.watchedArray.value);
+  const queueArrey = useSelector((state) => state.queueArray.value);
   const localStorageValue = isAct ? watchedArrey : queueArrey;
-  
+
   const searchValue = useSelector((state) => state.searchValue.value);
   const currentPage = useSelector((state) => state.currentPage.value);
   const value = match ? localStorageValue : searchValue;
@@ -30,7 +26,7 @@ const dispatch = useDispatch();
       .then((res) => {
         dispatch(changeData(res));
 
-        console.log(res);
+        // console.log(res);
       })
       .catch((er) => {
         console.log(er.message);

@@ -25,6 +25,7 @@ const FootertText = styled.p`
 `;
 const FooterLink = styled.a`
   color: inherit;
+  margin-left: 3px;
 `;
 
 const FooterUnicodeElement = styled.span`

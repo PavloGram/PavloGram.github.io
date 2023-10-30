@@ -12,7 +12,7 @@ function Pagination() {
   useEffect(() => {
     dispatch(changeCurrentPage(page));
   }, [dispatch, page]);
-
+  
   return (
     <>
       {responseData?.total_pages !== 1 && (

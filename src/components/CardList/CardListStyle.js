@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
-const candyCane = require("../../images/candy-cane.jpg");
+
+
 const Card = styled.ul`
   margin-top: 20px;
   margin-bottom: 20px;
@@ -56,6 +57,10 @@ const CardDiscriptionText = styled.p`
 const CardDiscriptionBlock = styled.div`
   display: flex;
 `;
+const NotImage = styled.img`
+width: 200px;
+margin: 30px 0;
+`
 export {
   CardDiscriptionBlock,
   CardDiscriptionItem,
@@ -66,5 +71,5 @@ export {
   Card,
   CardThumb,
   CardTitle,
-  candyCane,
+  NotImage
 };

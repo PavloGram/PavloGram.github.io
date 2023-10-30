@@ -8,7 +8,7 @@ import Layout from "./components/Layout/Layout";
 import SearchPage from "./pages/SearchPage/SearchPage";
 
 const Wrapper = styled.div`
-  min-height: 100vh;
+ min-height: 101vh;
   display: flex;
   flex-direction: column;
 `;

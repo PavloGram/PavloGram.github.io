@@ -1,9 +1,9 @@
 import { css, styled } from "styled-components";
-const candyCane = require("../../images/candy-cane.jpg");
+
 
 const ModalContainer = styled.div`
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
@@ -26,8 +26,6 @@ const ModalContainer = styled.div`
 const ModalContent = styled.div`
   width: 280px;
   display: block;
-
-  margin-right: 18px;
   padding: 48px 20px 40px 20px;
   background-color: white;
   transform: scale(0.5);
@@ -109,5 +107,5 @@ export {
   ModalPoster,
   ModalTitle,
   ModalButtonWrapper,
-  candyCane,
+
 };

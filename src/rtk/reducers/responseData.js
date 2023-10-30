@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const responseData = createSlice({
-  name: " responseData",
+  name: "responseData",
   initialState: { value: null },
   reducers: {
     changeData: (state, data) => {state.value = data.payload},

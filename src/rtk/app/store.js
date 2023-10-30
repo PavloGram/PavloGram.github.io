@@ -4,6 +4,9 @@ import responseData from "../reducers/responseData";
 import currentFilm from "../reducers/currentFilm";
 import currentPage from "../reducers/currentPage";
 import searchValue from "../reducers/searchValue";
+import queueArray from "../reducers/queueArray";
+import watchedArray from "../reducers/watchedArray";
+import currentLibraryPage from "../reducers/currentLibraryPage";
 
 
 export const store = configureStore({
@@ -13,6 +16,8 @@ export const store = configureStore({
     currentFilm: currentFilm,
     currentPage: currentPage,
     searchValue: searchValue,
-
+    queueArray: queueArray,
+    watchedArray: watchedArray,
+    currentLibraryPage: currentLibraryPage
   },
 });

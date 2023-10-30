@@ -1,3 +1,4 @@
+import candyCane from"../../images/candy-cane.jpg";
 import {
   ModalCloseBtn,
   ModalContainer,
@@ -8,19 +9,19 @@ import {
   ModalPoster,
   ModalTitle,
   ModalButtonWrapper,
-  candyCane,
+
 } from "./ModalStyle";
 
-import { useState } from "react";
 import ModalList from "../ModalList/ModalList";
 import Button from "../../UI/Button/Button";
 import CloseIcon from "../../UI/CloseIcon/CloseIcon";
 import { changeLocalStorage } from "../../js/changeLocalStorage";
-import { localStorageParse } from "../../js/localStorageParse";
 import { detectIdInArrey } from "../../js/detectIdInArrey";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeStateActive } from "../../rtk/reducers/isActiveModal";
+import { changeWatchedArray } from "../../rtk/reducers/watchedArray";
+import { changeQueueArray } from "../../rtk/reducers/queueArray";
 
 const LOCAL_STORAGE_WATCHED_KEY = "watched";
 const LOCAL_STORAGE_QUEUE_KEY = "queue";
@@ -29,10 +30,8 @@ function Modal() {
   const activeModal = useSelector((state) => state.ActiveModal.value);
   const currentFilm = useSelector((state) => state.currentFilm.value);
   const dispatch = useDispatch();
-  const [toggle, setToggle] = useState(false);
-
-  let watchedArrey = localStorageParse(LOCAL_STORAGE_WATCHED_KEY);
-  let queueArrey = localStorageParse(LOCAL_STORAGE_QUEUE_KEY);
+  const watchedArrey = useSelector((state) => state.watchedArray.value);
+  const queueArrey = useSelector((state) => state.queueArray.value);
   let isWatched = detectIdInArrey(watchedArrey, currentFilm);
   let isQueue = detectIdInArrey(queueArrey, currentFilm);
 
@@ -43,7 +42,8 @@ function Modal() {
       isWatched,
       LOCAL_STORAGE_WATCHED_KEY
     );
-    setToggle(!toggle);
+
+    dispatch(changeWatchedArray());
   }
   function handleChangeQueueList() {
     changeLocalStorage(
@@ -52,7 +52,7 @@ function Modal() {
       isQueue,
       LOCAL_STORAGE_QUEUE_KEY
     );
-    setToggle(!toggle);
+    dispatch(changeQueueArray());
   }
   function changeActive() {
     dispatch(changeStateActive());
