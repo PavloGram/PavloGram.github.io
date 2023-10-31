@@ -11,14 +11,18 @@ const ModalTextTitle = styled.p`
   font-size: 12px;
   font-weight: 500;
   line-height: 1.3;
-  width: 120px;
+  width: 108px;
+
+  @media screen and (min-width: 768px) {
+    width: 152px;
+  }
 `;
 const ModalTextDiscription = styled.p`
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
   line-height: 1.3;
-  width: 120px;
+  width: 130px;
 `;
 
 const ModalTextChangeBg = styled.span`

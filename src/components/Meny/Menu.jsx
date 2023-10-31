@@ -15,7 +15,9 @@ function Menu() {
     <MenuList>
       <MenuItem>
         <NavLink
-          className={({ isActive }) => (isActive ? "active-link" : "link")}
+          className={({ isActive }) =>
+            isActive ? "active-link home-button" : "link home-button"
+          }
           to="/"
           onClick={() => handleClick()}
         >
@@ -24,24 +26,46 @@ function Menu() {
       </MenuItem>
       <MenuItem>
         <NavLink
-          className={({ isActive }) => (isActive ? "active-link" : "link")}
+          className={({ isActive }) =>
+            isActive
+              ? "active-link my-library-button"
+              : "link my-library-button"
+          }
           to="/mylibrary"
         >
           my library
         </NavLink>
       </MenuItem>
       <style jsx="true">{`
+        .home-button {
+          font-size: 12px;
+          padding: 10px 26px;
+          @media screen and (min-width: 768px) {
+            font-size: 14px;
+            padding: 12px 24px;
+          }
+          @media screen and (min-width: 1280px) {
+         
+            padding: 14px 32px;
+          }
+        }
+        .my-library-button {
+          font-size: 12px;
+          padding: 10px 22px;
+          @media screen and (min-width: 768px) {
+            font-size: 14px;
+            padding: 12px 20px;
+          }
+          @media screen and (min-width: 1280px) {
+           padding: 14px 24px;
+          }
+        }
         .link {
           display: block;
-
           background: white;
           color: inherit;
-
           margin-right: 4px;
-          padding: 10px 22px 10px 22px;
           border-radius: 100px;
-
-          font-size: 12px;
           font-weight: 500;
           line-height: normal;
           text-decoration: none;
@@ -59,10 +83,9 @@ function Menu() {
           color: white;
 
           margin-right: 4px;
-          padding: 10px 22px 10px 22px;
+
           border-radius: 100px;
 
-          font-size: 12px;
           font-weight: 500;
           line-height: normal;
           text-decoration: none;

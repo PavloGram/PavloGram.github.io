@@ -22,6 +22,11 @@ const FootertText = styled.p`
   align-items: center;
   text-align: center;
   justify-content: center;
+  @media screen and (min-width: 768px){
+    font-size: 16px;
+    width: 100%;
+  }
+  
 `;
 const FooterLink = styled.a`
   color: inherit;
@@ -31,5 +36,12 @@ const FooterLink = styled.a`
 const FooterUnicodeElement = styled.span`
   margin-right: 3px;
 `;
+const FootertTextWrap = styled.span`
+margin-bottom: 10px;
+@media screen and (min-width: 768px){
+  margin-bottom: 0;
+  margin-right: 3px;
+}
+`
 
-export { FooterUnicodeElement, FooterContainer, FooterLink, FootertText };
+export { FooterUnicodeElement, FooterContainer, FooterLink, FootertText, FootertTextWrap };

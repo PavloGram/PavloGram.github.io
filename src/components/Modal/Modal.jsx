@@ -1,4 +1,4 @@
-import candyCane from"../../images/candy-cane.jpg";
+import candyCane from "../../images/candy-cane.jpg";
 import {
   ModalCloseBtn,
   ModalContainer,
@@ -9,7 +9,6 @@ import {
   ModalPoster,
   ModalTitle,
   ModalButtonWrapper,
-
 } from "./ModalStyle";
 
 import ModalList from "../ModalList/ModalList";
@@ -82,6 +81,7 @@ function Modal() {
           <ModalDiscriptionText>{currentFilm?.overview}</ModalDiscriptionText>
           <ModalButtonWrapper>
             <Button
+              firstButton={true}
               change={handleChangeWatchedList}
               text={isWatched ? "Rem to watched" : "Add to watched"}
             ></Button>

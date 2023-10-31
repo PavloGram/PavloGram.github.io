@@ -6,6 +6,9 @@ const MenuList = styled.ul`
   list-style-type: none;
   padding-left: 0;
   margin: 0 -8px 8px 0;
+  @media screen and (min-width: 768px) {
+ margin: 0 0 0 4px;
+  }
 `;
 
 const MenuItem = styled.li``;

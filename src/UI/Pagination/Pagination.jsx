@@ -4,6 +4,7 @@ import "react-responsive-pagination/themes/classic.css";
 import { changeCurrentPage } from "../../rtk/reducers/currentPage";
 import { useState } from "react";
 import { useEffect } from "react";
+import { PaginationWrap } from "./PaginationStyles";
 
 function Pagination() {
   const responseData = useSelector((state) => state.responseData.value);
@@ -14,7 +15,7 @@ function Pagination() {
   }, [dispatch, page]);
   
   return (
-    <>
+    <PaginationWrap>
       {responseData?.total_pages !== 1 && (
         <ResponsivePagination
           current={responseData?.page}
@@ -61,7 +62,7 @@ function Pagination() {
         //   cursor: auto;
         // }
       `}</style>
-    </>
+    </PaginationWrap>
   );
 }
 export default Pagination;

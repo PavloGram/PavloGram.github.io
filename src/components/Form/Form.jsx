@@ -3,6 +3,7 @@ import {
   SearchForm,
   SearchFormInput,
   SearchFormWarningText,
+  SearchFormWrap
 } from "./FormStyle";
 
 import SearchIcon from "../../UI/SearchIcon/SearchIcon";
@@ -29,7 +30,7 @@ function Form() {
   }
 
   return (
-    <React.Fragment>
+    <SearchFormWrap>
       <SearchForm>
         <SearchFormInput
           type="text"
@@ -59,7 +60,7 @@ function Form() {
           Search result not successful. Enter the correct movie name.
         </SearchFormWarningText>
       )}
-    </React.Fragment>
+    </SearchFormWrap>
   );
 }
 

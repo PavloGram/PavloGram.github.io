@@ -3,6 +3,7 @@ import {
   FooterContainer,
   FootertText,
   FooterLink,
+  FootertTextWrap
 } from "./FooterStyle";
 import React from "react";
 
@@ -10,10 +11,10 @@ function Footer() {
   return (
     <FooterContainer>
       <FootertText>
-        <span>
+        <FootertTextWrap>
           <FooterUnicodeElement>&#169;</FooterUnicodeElement>
           2023 | All Rights Reserved |
-        </span>{" "}
+        </FootertTextWrap>
         <span>
           Developed by
           <FooterLink href="mailto:gramazorapavlo7@gmail.com">

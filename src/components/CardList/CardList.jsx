@@ -14,6 +14,7 @@ import {
   CardDiscriptionItem,
   CardDiscriptionText,
   NotImage,
+  CardWrap
 } from "./CardListStyle";
 import { useDispatch, useSelector } from "react-redux";
 import { changeFilm } from "../../rtk/reducers/currentFilm";
@@ -27,13 +28,13 @@ function CardList() {
   const dispatch = useDispatch();
 
   return (
-    <>
+    <CardWrap>
       {value.length === 0 ? (
         <NotImage src={noMovies} alt="young man" />
       ) : (
         <Card>
           {value.map((el) => (
-            <CardItem
+            <CardItem 
               key={el.id}
               onClick={() => {
                 dispatch(changeFilm(el));
@@ -42,7 +43,7 @@ function CardList() {
               }}
             >
               <CardThumb>
-                <div>
+                
                   <CardImage
                     loading="lazy"
                     src={
@@ -51,7 +52,7 @@ function CardList() {
                         : candyCane
                     }
                   />{" "}
-                </div>
+           
                 <CardTitle>{el.title}</CardTitle>
                 <CardDiscriptionBlock>
                   <CardDiscriptionList>
@@ -85,7 +86,7 @@ function CardList() {
       )}
 
       <Pagination />
-    </>
+    </CardWrap>
   );
 }
 
