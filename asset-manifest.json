@@ -1,13 +1,19 @@
 {
   "files": {
-    "main.js": "/film/static/js/main.ee391d4c.js",
+    "main.css": "/film/static/css/main.83ef516e.css",
+    "main.js": "/film/static/js/main.f9bee4c5.js",
     "static/media/candy-cane.jpg": "/film/static/media/candy-cane.a8f606e5ae2035f481ce.jpg",
+    "static/media/nomovies.png": "/film/static/media/nomovies.7c4010b4cd8a3766accc.png",
+    "static/media/header-bg-desktop.jpg": "/film/static/media/header-bg-desktop.e9be3ee6495fa0d82fe3.jpg",
     "static/media/header-bg-mob.jpg": "/film/static/media/header-bg-mob.810a8df6eedc0415583d.jpg",
+    "static/media/header-bg-tablet.jpg": "/film/static/media/header-bg-tablet.43d26b7e1a2be5010c34.jpg",
     "index.html": "/film/index.html",
     "static/media/logoo.svg": "/film/static/media/logoo.5f5534f8fc1980db1bb48d3a5f01b677.svg",
-    "main.ee391d4c.js.map": "/film/static/js/main.ee391d4c.js.map"
+    "main.83ef516e.css.map": "/film/static/css/main.83ef516e.css.map",
+    "main.f9bee4c5.js.map": "/film/static/js/main.f9bee4c5.js.map"
   },
   "entrypoints": [
-    "static/js/main.ee391d4c.js"
+    "static/css/main.83ef516e.css",
+    "static/js/main.f9bee4c5.js"
   ]
 }
