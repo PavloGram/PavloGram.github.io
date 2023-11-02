@@ -2,11 +2,19 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const currentLibraryPage = createSlice({
   name: "currentLibraryPage",
-  initialState: { value: true },
+  initialState: { value: false },
   reducers: {
-    changeCurrentLibraryPage: (state) => {  state.value = !state.value },
+    changeCurrentLibraryPageToActive: (state) => {
+      state.value = true;
+    },
+    changeCurrentLibraryPageToDisctive: (state) => {
+      state.value = false;
+    },
   },
 });
 
-export const { changeCurrentLibraryPage } = currentLibraryPage.actions;
+export const {
+  changeCurrentLibraryPageToActive,
+  changeCurrentLibraryPageToDisctive,
+} = currentLibraryPage.actions;
 export default currentLibraryPage.reducer;

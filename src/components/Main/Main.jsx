@@ -10,23 +10,18 @@ function Main() {
   const match = useMatch("/mylibrary");
   const isAct = useSelector((state) => state.currentLibraryPage.value);
   const dispatch = useDispatch();
-
   const watchedArrey = useSelector((state) => state.watchedArray.value);
   const queueArrey = useSelector((state) => state.queueArray.value);
   const localStorageValue = isAct ? watchedArrey : queueArrey;
-
   const searchValue = useSelector((state) => state.searchValue.value);
   const currentPage = useSelector((state) => state.currentPage.value);
   const value = match ? localStorageValue : searchValue;
 
   useEffect(() => {
     dispatch(changeData(null));
-    // console.log(value)
     fetchFilms(value, currentPage)
       .then((res) => {
         dispatch(changeData(res));
-
-        // console.log(res);
       })
       .catch((er) => {
         console.log(er.message);

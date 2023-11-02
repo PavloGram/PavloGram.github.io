@@ -7,19 +7,16 @@ import React from "react";
 import MyLibraryButton from "../MyLibraryButton/MyLibraryButton";
 
 function Header() {
-  const match = useMatch("/mylibrary")
+  const match = useMatch("/mylibrary");
 
   return (
     <HeaderContainer>
       <Nav>
-        <Menu  />
-       {!match && <Form
-       
-        />}
+        <Menu />
+        {!match && <Form />}
       </Nav>
       <Logo />
-      {match && <MyLibraryButton/>}
-
+      {match && <MyLibraryButton />}
     </HeaderContainer>
   );
 }

@@ -1,8 +1,10 @@
 import React from 'react'
 
+
+
 function NotFoundPage() {
   return (
-    <div>NotFoundPage</div>
+    <h1 style={{textAlign:'center', fontSize: '40px' }}>Sorry, not found page</h1>
   )
 }
 

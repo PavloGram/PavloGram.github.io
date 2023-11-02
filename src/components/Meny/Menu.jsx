@@ -2,21 +2,25 @@ import { NavLink } from "react-router-dom";
 import { MenuItem, MenuList } from "./MenuStyle";
 import React from "react";
 import { changeSearchValue } from "../../rtk/reducers/searchValue";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { changeCurrentPage } from "../../rtk/reducers/currentPage";
+import { changeCurrentIndexPageToActive, changeCurrentIndexPageToDisactive } from "../../rtk/reducers/currentIndexPage";
+
 function Menu() {
   const dispatch = useDispatch();
+  const activeIndexPage = useSelector((value) => value.currentIndexPage.value);
   function handleClick() {
     dispatch(changeSearchValue(null));
     dispatch(changeCurrentPage(1));
+    dispatch(changeCurrentIndexPageToActive())
   }
 
   return (
     <MenuList>
       <MenuItem>
         <NavLink
-          className={({ isActive }) =>
-            isActive ? "active-link home-button" : "link home-button"
+          className={
+            activeIndexPage ? "active-link home-button" : "link home-button"
           }
           to="/"
           onClick={() => handleClick()}
@@ -26,12 +30,13 @@ function Menu() {
       </MenuItem>
       <MenuItem>
         <NavLink
-          className={({ isActive }) =>
-            isActive
+          className={
+            !activeIndexPage
               ? "active-link my-library-button"
               : "link my-library-button"
           }
           to="/mylibrary"
+          onClick={() => dispatch(changeCurrentIndexPageToDisactive())}
         >
           my library
         </NavLink>
@@ -45,7 +50,6 @@ function Menu() {
             padding: 12px 24px;
           }
           @media screen and (min-width: 1280px) {
-         
             padding: 14px 32px;
           }
         }
@@ -57,7 +61,7 @@ function Menu() {
             padding: 12px 20px;
           }
           @media screen and (min-width: 1280px) {
-           padding: 14px 24px;
+            padding: 14px 24px;
           }
         }
         .link {

@@ -3,7 +3,7 @@ import {
   SearchForm,
   SearchFormInput,
   SearchFormWarningText,
-  SearchFormWrap
+  SearchFormWrap,
 } from "./FormStyle";
 
 import SearchIcon from "../../UI/SearchIcon/SearchIcon";
@@ -15,9 +15,9 @@ function Form() {
   const [inputValue, setInputValue] = useState("");
   const dispatch = useDispatch();
   const responseData = useSelector((state) => state.responseData.value);
-  // console.log(responseData);
+
   function handleChange(e) {
-    e.preventDefault();
+    // e.preventDefault();
     if (inputValue.trim() === "") {
       return alert("putt text");
     }
@@ -48,7 +48,7 @@ function Form() {
             cursor: "pointer",
           }}
           to="/searchpage"
-          onClick={handleChange}
+          onClick={() => handleChange()}
         >
           {" "}
           <SearchIcon></SearchIcon>

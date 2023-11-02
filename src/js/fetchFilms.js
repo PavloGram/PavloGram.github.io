@@ -3,7 +3,6 @@ const BASE_URL_QUERY = "https://api.themoviedb.org/3/search/movie";
 const BASE_URL_POPULAR = "https://api.themoviedb.org/3/trending/movie/week";
 
 async function fetchFilms(value, page = 1) {
-  window.scrollTo(0, 0);
   if (typeof value === "string") {
     const searchParamsToQuery = new URLSearchParams({
       api_key: API_KEY,

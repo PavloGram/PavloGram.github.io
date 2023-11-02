@@ -4,25 +4,24 @@ import Footer from "../Footer/Footer";
 import Modal from "../Modal/Modal";
 import GlobalStyle from "../../js/GlobalStyle";
 import Header from "../Header/Header";
+import styled from "styled-components";
 
-function Layout({setValue, currentPage, setCurrentPage, setFilm, currentFilm, isActivModal, setIsActivModal }) {
+
+const Wrapper = styled.div`
+ min-height: 101vh;
+  display: flex;
+  flex-direction: column;
+`;
+function Layout() {
+
   return (
-    <>
-     <Header
-        setValue={setValue}
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-        setFilm={setFilm}
-      />
+    <Wrapper>
+      <Header />
       <Outlet />
       <Footer />
-      <Modal
-        currentFilm={currentFilm}
-        isActivModal={isActivModal}
-        setIsActivModal={setIsActivModal}
-      ></Modal>
+      <Modal/>
       <GlobalStyle />
-    </>
+    </Wrapper>
   );
 }
 
