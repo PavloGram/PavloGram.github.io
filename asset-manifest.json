@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/film/static/css/main.83ef516e.css",
-    "main.js": "/film/static/js/main.718179b7.js",
+    "main.js": "/film/static/js/main.e2340421.js",
     "static/media/candy-cane.jpg": "/film/static/media/candy-cane.a8f606e5ae2035f481ce.jpg",
     "static/media/nomovies.png": "/film/static/media/nomovies.7c4010b4cd8a3766accc.png",
     "static/media/header-bg-desktop.jpg": "/film/static/media/header-bg-desktop.e9be3ee6495fa0d82fe3.jpg",
@@ -10,10 +10,10 @@
     "index.html": "/film/index.html",
     "static/media/logoo.svg": "/film/static/media/logoo.5f5534f8fc1980db1bb48d3a5f01b677.svg",
     "main.83ef516e.css.map": "/film/static/css/main.83ef516e.css.map",
-    "main.718179b7.js.map": "/film/static/js/main.718179b7.js.map"
+    "main.e2340421.js.map": "/film/static/js/main.e2340421.js.map"
   },
   "entrypoints": [
     "static/css/main.83ef516e.css",
-    "static/js/main.718179b7.js"
+    "static/js/main.e2340421.js"
   ]
 }
