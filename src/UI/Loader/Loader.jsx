@@ -1,4 +1,5 @@
 import { ThreeCircles } from "react-loader-spinner";
+import { MAIN_BRAND_COLOR } from "../../globalStylesAndConstans/styleContans";
 
 
 function Loader() {
@@ -7,7 +8,7 @@ function Loader() {
 <ThreeCircles
   height="100"
   width="100"
-  color="#b92f2c"
+  color = {MAIN_BRAND_COLOR}
   wrapperStyle={{}}
   wrapperClass=""
   visible={true}

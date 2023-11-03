@@ -1,10 +1,6 @@
 import { css, styled } from "styled-components";
-import {
-  DESKTOP_BREAKING_POINT,
-  MAIN_BACKGROUND_COLOR,
-  MAIN_BRAND_COLOR,
-  TABLET_BREAKING_POINT,
-} from "../../js/styleContans";
+import { DESKTOP_BREAKING_POINT, MAIN_BACKGROUND_COLOR, MAIN_BRAND_COLOR, TABLET_BREAKING_POINT } from "../../globalStylesAndConstans/styleContans";
+
 
 const ModalContainer = styled.div`
   height: 100%;
@@ -71,7 +67,7 @@ const ModalCloseBtn = styled.button`
   padding: 0;
   border: none;
   border-radius: 5px;
-  background-color: inherit;
+  background-color: ${MAIN_BACKGROUND_COLOR};
   transition: 1s background-color;
 
   cursor: pointer;

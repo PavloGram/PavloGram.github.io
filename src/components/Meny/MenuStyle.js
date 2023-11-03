@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { MAIN_BACKGROUND_COLOR, MAIN_TEXT_COLOR, PRIMARY_BACKGROUND_COLOR, PRIMARY_TEXT_COLOR, TABLET_BREAKING_POINT } from "../../globalStylesAndConstans/styleContans";
 
 const MenuList = styled.ul`
   display: flex;
@@ -6,7 +7,7 @@ const MenuList = styled.ul`
   list-style-type: none;
   padding-left: 0;
   margin: 0 -8px 8px 0;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: ${TABLET_BREAKING_POINT}px) {
  margin: 0 0 0 4px;
   }
 `;
@@ -15,8 +16,8 @@ const MenuItem = styled.li``;
 const MenuLink = styled.a`
   display: block;
 
-  background: white;
-  color: inherit;
+  background: ${MAIN_BACKGROUND_COLOR};
+  color: ${MAIN_TEXT_COLOR};
 
   margin-right: 4px;
   padding: 10px 22px 10px 22px;
@@ -29,8 +30,8 @@ const MenuLink = styled.a`
   text-transform: uppercase;
 
   &:hover {
-    background: black;
-    color: white;
+    background: ${PRIMARY_BACKGROUND_COLOR};
+    color: ${PRIMARY_TEXT_COLOR};
   }
 `;
 

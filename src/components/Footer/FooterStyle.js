@@ -1,9 +1,6 @@
 import { styled } from "styled-components";
-import {
-  FOOTER_BACKGROUND_COLOR,
-  FOOTER_TEXT_COLOR,
-  TABLET_BREAKING_POINT,
-} from "../../js/styleContans";
+import { FOOTER_BACKGROUND_COLOR, FOOTER_TEXT_COLOR, TABLET_BREAKING_POINT } from "../../globalStylesAndConstans/styleContans";
+
 const FooterContainer = styled.footer`
   background: ${FOOTER_BACKGROUND_COLOR};
   width: 100%;

@@ -1,9 +1,6 @@
 import { styled } from "styled-components";
-import {
-  DESKTOP_BREAKING_POINT,
-  PRIMARY_TEXT_COLOR,
-  TABLET_BREAKING_POINT,
-} from "../../js/styleContans";
+import { DESKTOP_BREAKING_POINT, PRIMARY_TEXT_COLOR, TABLET_BREAKING_POINT } from "../../globalStylesAndConstans/styleContans";
+
 
 const HeaderLogo = styled.div`
   margin-top: auto;

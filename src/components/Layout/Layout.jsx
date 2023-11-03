@@ -2,9 +2,9 @@ import React from "react";
 import { Outlet } from "react-router";
 import Footer from "../Footer/Footer";
 import Modal from "../Modal/Modal";
-import GlobalStyle from "../../js/GlobalStyle";
 import Header from "../Header/Header";
 import styled from "styled-components";
+import GlobalStyle from "../../globalStylesAndConstans/GlobalStyle";
 
 
 const Wrapper = styled.div`

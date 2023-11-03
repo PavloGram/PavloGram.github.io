@@ -1,10 +1,6 @@
 import { styled } from "styled-components";
-import {
-  DESKTOP_BREAKING_POINT,
-  MAIN_BACKGROUND_COLOR,
-  MAIN_TEXT_COLOR,
-  TABLET_BREAKING_POINT,
-} from "../../js/styleContans";
+import { DESKTOP_BREAKING_POINT, MAIN_BACKGROUND_COLOR, MAIN_TEXT_COLOR, TABLET_BREAKING_POINT } from "../../globalStylesAndConstans/styleContans";
+
 
 const SearchFormButton = styled.button`
   position: absolute;

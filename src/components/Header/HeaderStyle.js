@@ -2,10 +2,8 @@ import { styled } from "styled-components";
 import headerMob from "../../images/header/header-bg-mob.jpg";
 import headerTab from "../../images/header/header-bg-tablet.jpg";
 import headerDes from "../../images/header/header-bg-desktop.jpg";
-import {
-  DESKTOP_BREAKING_POINT,
-  TABLET_BREAKING_POINT,
-} from "../../js/styleContans";
+import { DESKTOP_BREAKING_POINT, TABLET_BREAKING_POINT } from "../../globalStylesAndConstans/styleContans";
+
 
 const HeaderContainer = styled.header`
   position: relative;

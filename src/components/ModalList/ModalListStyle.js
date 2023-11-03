@@ -1,10 +1,5 @@
 import { styled } from "styled-components";
-import {
-  MAIN_BRAND_COLOR,
-  MODAL_TEXT_COLOR,
-  PRIMARY_TEXT_COLOR,
-  TABLET_BREAKING_POINT,
-} from "../../js/styleContans";
+import { MAIN_BRAND_COLOR, MODAL_TEXT_COLOR, PRIMARY_TEXT_COLOR, TABLET_BREAKING_POINT } from "../../globalStylesAndConstans/styleContans";
 
 const ModalItem = styled.li`
   display: flex;

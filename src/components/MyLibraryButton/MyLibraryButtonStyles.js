@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {
   DESKTOP_BREAKING_POINT,
   TABLET_BREAKING_POINT,
-} from "../../js/styleContans";
+} from "../../globalStylesAndConstans/styleContans";
 const LibraryButtonWrap = styled.div`
   margin-top: 16px;
   display: flex;

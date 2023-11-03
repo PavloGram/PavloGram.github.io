@@ -1,10 +1,5 @@
 import { styled } from "styled-components";
-import {
-  DESKTOP_BREAKING_POINT,
-  MAIN_BRAND_COLOR,
-  MAIN_TEXT_COLOR,
-  TABLET_BREAKING_POINT,
-} from "../../js/styleContans";
+import { DESKTOP_BREAKING_POINT, MAIN_BRAND_COLOR, MAIN_TEXT_COLOR, TABLET_BREAKING_POINT } from "../../globalStylesAndConstans/styleContans";
 
 const Card = styled.ul`
   width: 280px;
