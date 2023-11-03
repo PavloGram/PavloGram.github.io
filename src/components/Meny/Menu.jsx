@@ -2,53 +2,36 @@ import { NavLink } from "react-router-dom";
 import { MenuItem, MenuList } from "./MenuStyle";
 import React from "react";
 import { changeSearchValue } from "../../rtk/reducers/searchValue";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { changeCurrentPage } from "../../rtk/reducers/currentPage";
-import {
-  changeCurrentIndexPageToActive, changeCurrentIndexPageToDisactive,
-  // changeCurrentIndexPageToDisactive,
-} from "../../rtk/reducers/currentIndexPage";
-// import { useState } from "react";
-
-// const homeButtonStyle = {}
-// const myLibraryButtonStyle = {}
-// const activeLink = {}
-// const disactiveLink = {}
 
 function Menu() {
-  // const match = useMatch("/mylibrary")
-  // const [toggle, setToggle] = useState(true)
   const dispatch = useDispatch();
 
-  const isAct = useSelector((value) => value.currentIndexPage.value);
-  console.log(isAct)
-  function handleClick() {
+  function handleClickToHome() {
     dispatch(changeSearchValue(null));
     dispatch(changeCurrentPage(1));
-    dispatch(changeCurrentIndexPageToActive());
-
   }
 
   return (
     <MenuList>
       <MenuItem>
         <NavLink
-          // className={ "active home-button" }
-          
-          className={isAct ? "active home-button" : "link home-button"}
+          className={({ isActive }) =>
+            isActive ? "active-link home-button" : "link home-button"
+          }
           to="/"
-          onClick={() => handleClick()}
+          onClick={() => handleClickToHome()}
         >
           home
         </NavLink>
       </MenuItem>
       <MenuItem>
         <NavLink
-          // className={  "link my-library-button"  }
-          className={ !isAct  ? "active my-library-button" : "link my-library-button"  }
-          onClick={() => dispatch(changeCurrentIndexPageToDisactive())}
+          className={({ isActive }) =>
+            isActive ? "active-link my-library-button" : "link my-library-button"
+          }
           to="/mylibrary"
-         
         >
           my library
         </NavLink>
@@ -79,7 +62,7 @@ function Menu() {
         .link {
           display: block;
           background: white;
-          color:  inherit;
+          color: inherit;
           margin-right: 4px;
           border-radius: 100px;
           font-weight: 500;
@@ -92,7 +75,7 @@ function Menu() {
             color: white;
           }
         }
-        .active{
+        .active-link {
           display: block;
           background: black;
           color: white;

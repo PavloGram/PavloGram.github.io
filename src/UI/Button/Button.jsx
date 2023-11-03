@@ -5,7 +5,6 @@ function Button({ isActive, text, change, value, firstButton }) {
   return (
     <ButtonStyle
       $firstButton={firstButton ? firstButton : undefined}
-      $text={text}
       $active={isActive ? isActive : undefined}
       value={value}
       onClick={change}

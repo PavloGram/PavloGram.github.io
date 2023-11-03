@@ -12,10 +12,10 @@ const LibraryButtonWrap = styled.div`
     position: absolute;
     top: 0;
     right: 0;
-    margin-right: 12px;
+    margin-right: 16px;
   }
   @media screen and (min-width: ${DESKTOP_BREAKING_POINT}px) {
-    margin-right: 28px;
+    margin-right: 32px;
   }
 `;
 

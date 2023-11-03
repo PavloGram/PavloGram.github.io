@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 import {
+  DESKTOP_BREAKING_POINT,
   MAIN_BACKGROUND_COLOR,
   MAIN_TEXT_COLOR,
   TABLET_BREAKING_POINT,
@@ -52,7 +53,7 @@ const SearchFormInput = styled.input`
     width: 165px;
     padding: 11px 16px;
   }
-  @media screen and (min-width: ${TABLET_BREAKING_POINT}px) {
+  @media screen and (min-width: ${DESKTOP_BREAKING_POINT}px) {
     width: 187px;
     padding: 13px 16px;
   }

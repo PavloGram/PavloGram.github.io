@@ -34,7 +34,7 @@ export const ButtonStyle = styled.button`
     `}
 
   ${({ value }) =>
-    value === "library" &&
+    value === "queue" &&
     css`
       padding: 9px 23px;
       @media screen and (min-width: 768px) {
@@ -45,10 +45,16 @@ export const ButtonStyle = styled.button`
         
       }
     `}
-  ${({ $text }) =>
-    $text === "watched" &&
+  ${({ value}) =>
+    value === "watched" &&
     css`
+    padding: 9px 22px;
+    margin-right: 4px;
+    @media screen and (min-width: 768px) {
+        padding: 11px 22px;
+      }
       @media screen and (min-width: 1280px) {
+        margin-right: 8px;
         padding: 13px 31px;
       }
     `}

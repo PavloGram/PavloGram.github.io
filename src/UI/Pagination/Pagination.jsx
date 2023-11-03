@@ -11,7 +11,7 @@ function Pagination() {
   const [page, setPage] = useState(responseData?.page);
   const dispatch = useDispatch();
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
     dispatch(changeCurrentPage(page));
   }, [dispatch, page]);
   
@@ -38,11 +38,11 @@ function Pagination() {
           position: relative;
           display: block;
           margin: 0 2px;
-          /* min-height: 40px;
-          min-width: 40px; */
+           min-height: 40px;
+          min-width: 40px; 
           border-radius: 20px;
           text-align: center;
-          /* line-height: 40px; */
+          //  line-height: 40px; 
           color: #b92f2c;
           text-decoration: none;
         }
@@ -57,11 +57,11 @@ function Pagination() {
           background-color: #b92f2c;
         }
 
-        // .page-item.disabled .page-link {
-        //   color: #6c757d;
-        //   pointer-events: none;
-        //   cursor: auto;
-        // }
+        .page-item.disabled .page-link {
+          color: #6c757d;
+          pointer-events: none;
+          cursor: auto;
+        }
       `}</style>
     </PaginationWrap>
   );
