@@ -32,7 +32,7 @@ const ModalContainer = styled.div`
 `;
 const ModalContent = styled.div`
   width: 280px;
-  height: 100%;
+  max-height: 100%;
   display: block;
   padding: 48px 20px 40px 20px;
   background-color: ${MAIN_BACKGROUND_COLOR};
