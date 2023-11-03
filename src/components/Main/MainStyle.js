@@ -1,7 +1,6 @@
 import { styled } from "styled-components";
 
 export const MainContainer = styled.main`
-  /* width: 280px; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -9,5 +8,4 @@ export const MainContainer = styled.main`
   margin-right: auto;
   margin-left: auto;
   flex-grow: 1;
-
 `;

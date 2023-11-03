@@ -4,24 +4,29 @@ import React from "react";
 import { changeSearchValue } from "../../rtk/reducers/searchValue";
 import { useDispatch, useSelector } from "react-redux";
 import { changeCurrentPage } from "../../rtk/reducers/currentPage";
-import { changeCurrentIndexPageToActive, changeCurrentIndexPageToDisactive } from "../../rtk/reducers/currentIndexPage";
+import {
+  changeCurrentIndexPageToActive,
+  changeCurrentIndexPageToDisactive,
+} from "../../rtk/reducers/currentIndexPage";
+import { useState } from "react";
 
 function Menu() {
+  const [toggle, setToggle] = useState(true)
   const dispatch = useDispatch();
-  const activeIndexPage = useSelector((value) => value.currentIndexPage.value);
+  const isAct = useSelector((value) => value.currentIndexPage.value);
+  console.log(isAct)
   function handleClick() {
     dispatch(changeSearchValue(null));
     dispatch(changeCurrentPage(1));
-    dispatch(changeCurrentIndexPageToActive())
+    dispatch(changeCurrentIndexPageToActive());
   }
 
   return (
     <MenuList>
       <MenuItem>
         <NavLink
-          className={
-            activeIndexPage ? "active-link home-button" : "link home-button"
-          }
+          // className={ "active home-button" }
+          className={toggle ? "active home-button" : "link home-button"}
           to="/"
           onClick={() => handleClick()}
         >
@@ -30,11 +35,8 @@ function Menu() {
       </MenuItem>
       <MenuItem>
         <NavLink
-          className={
-            !activeIndexPage
-              ? "active-link my-library-button"
-              : "link my-library-button"
-          }
+          // className={  "link my-library-button"  }
+          className={ !toggle ? "active my-library-button" : "link my-library-button"  }
           to="/mylibrary"
           onClick={() => dispatch(changeCurrentIndexPageToDisactive())}
         >
@@ -46,7 +48,7 @@ function Menu() {
           font-size: 12px;
           padding: 10px 26px;
           @media screen and (min-width: 768px) {
-            font-size: 14px;
+            font-size: 12px;
             padding: 12px 24px;
           }
           @media screen and (min-width: 1280px) {
@@ -57,7 +59,7 @@ function Menu() {
           font-size: 12px;
           padding: 10px 22px;
           @media screen and (min-width: 768px) {
-            font-size: 14px;
+            font-size: 12px;
             padding: 12px 20px;
           }
           @media screen and (min-width: 1280px) {
@@ -80,16 +82,12 @@ function Menu() {
             color: white;
           }
         }
-        .active-link {
+        .active{
           display: block;
-
           background: black;
           color: white;
-
           margin-right: 4px;
-
           border-radius: 100px;
-
           font-weight: 500;
           line-height: normal;
           text-decoration: none;

@@ -23,13 +23,13 @@ function MyLibraryButton() {
         isActive={isAct}
         text="watched"
         value="library"
-        change={handleChangeToActive}
+        change={handleChangeToDisactive}
       />
       <Button
         isActive={!isAct}
         text="queue"
         value="library"
-        change={handleChangeToDisactive}
+        change={handleChangeToActive}
       />
     </LibraryButtonWrap>
   );

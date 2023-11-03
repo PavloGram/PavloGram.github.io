@@ -1,7 +1,7 @@
 
 
 export function changeLocalStorage(
-  localStorageIdArrey,
+  localStorageIdArrey = [],
   currentFilm,
   stateChangeFunction,
   storageKey

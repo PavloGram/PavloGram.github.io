@@ -16,23 +16,19 @@ import Button from "../../UI/Button/Button";
 import CloseIcon from "../../UI/CloseIcon/CloseIcon";
 import { changeLocalStorage } from "../../js/changeLocalStorage";
 import { detectIdInArrey } from "../../js/detectIdInArrey";
-// import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeStateActive } from "../../rtk/reducers/isActiveModal";
 import { changeWatchedArray } from "../../rtk/reducers/watchedArray";
 import { changeQueueArray } from "../../rtk/reducers/queueArray";
-// import { localStorageParse } from "../../js/localStorageParse";
 
 const LOCAL_STORAGE_WATCHED_KEY = "watched";
 const LOCAL_STORAGE_QUEUE_KEY = "queue";
 
 function Modal() {
-  // const [toggle, setToggle] = useState(false)
   const activeModal = useSelector((state) => state.ActiveModal.value);
   const currentFilm = useSelector((state) => state.currentFilm.value);
   const dispatch = useDispatch();
-  // const watchedArrey = localStorageParse(LOCAL_STORAGE_WATCHED_KEY);
-  // const queueArrey = localStorageParse(LOCAL_STORAGE_QUEUE_KEY);
+
   const watchedArrey = useSelector((state) => state.watchedArray.value);
   const queueArrey = useSelector((state) => state.queueArray.value);
   let isWatched = detectIdInArrey(watchedArrey, currentFilm);
@@ -47,7 +43,6 @@ function Modal() {
     );
 
     dispatch(changeWatchedArray());
-    // setToggle(!toggle)
   }
   function handleChangeQueueList() {
     changeLocalStorage(
@@ -57,7 +52,6 @@ function Modal() {
       LOCAL_STORAGE_QUEUE_KEY
     );
     dispatch(changeQueueArray());
-    // setToggle(!toggle)
   }
   function changeActive() {
     dispatch(changeStateActive());

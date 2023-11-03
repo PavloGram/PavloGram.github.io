@@ -2,13 +2,13 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const currentLibraryPage = createSlice({
   name: "currentLibraryPage",
-  initialState: { value: false },
+  initialState: { value: true },
   reducers: {
     changeCurrentLibraryPageToActive: (state) => {
-      state.value = true;
+      state.value = false;
     },
     changeCurrentLibraryPageToDisctive: (state) => {
-      state.value = false;
+      state.value = true;
     },
   },
 });
