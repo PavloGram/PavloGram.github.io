@@ -11,7 +11,7 @@ function Pagination() {
   const [page, setPage] = useState(responseData?.page);
   const dispatch = useDispatch();
   useEffect(() => {
-    // window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
     dispatch(changeCurrentPage(page));
   }, [dispatch, page]);
   
