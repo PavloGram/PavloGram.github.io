@@ -17,9 +17,11 @@ const ModalContainer = styled.div`
   align-items: center;
   justify-content: center;
   pointer-events: none;
+  overflow-y: auto;
   opacity: 0;
   z-index: 100;
   transition: 0.5s;
+
 
   ${(props) =>
     props.$isActivModal &&
@@ -30,11 +32,13 @@ const ModalContainer = styled.div`
 `;
 const ModalContent = styled.div`
   width: 280px;
+  height: 100%;
   display: block;
   padding: 48px 20px 40px 20px;
   background-color: ${MAIN_BACKGROUND_COLOR};
   transform: scale(0.5);
   transition: 0.4s transform;
+  overflow: auto;
 
   ${(props) =>
     props.$isActivModal &&
