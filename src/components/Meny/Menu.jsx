@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { changeCurrentPage } from "../../rtk/reducers/currentPage";
 import {
   changeCurrentIndexPageToActive,
-  changeCurrentIndexPageToDisactive,
+  // changeCurrentIndexPageToDisactive,
 } from "../../rtk/reducers/currentIndexPage";
 import { useState } from "react";
 
@@ -19,6 +19,7 @@ function Menu() {
     dispatch(changeSearchValue(null));
     dispatch(changeCurrentPage(1));
     dispatch(changeCurrentIndexPageToActive());
+    setToggle(toggle)
   }
 
   return (
@@ -38,7 +39,7 @@ function Menu() {
           // className={  "link my-library-button"  }
           className={ !toggle ? "active my-library-button" : "link my-library-button"  }
           to="/mylibrary"
-          onClick={() => dispatch(changeCurrentIndexPageToDisactive())}
+          onClick={() =>     setToggle(!toggle)}
         >
           my library
         </NavLink>
