@@ -1,13 +1,13 @@
 
 
 export function changeLocalStorage(
-  localStorageIdArrey = [],
+  localStorageIdArrey,
   currentFilm,
   stateChangeFunction,
   storageKey
 ) {
   const currentFilmId = currentFilm.id ;
-  let arrey = localStorageIdArrey.slice(0) || [] ;
+  let arrey = localStorageIdArrey ? localStorageIdArrey.slice(0) : [] ;
   // console.log(arrey)
   if (arrey.includes(currentFilmId)) {
     arrey.splice(localStorageIdArrey.indexOf(currentFilmId), 1);
