@@ -11,13 +11,11 @@ import HomePage from "./pages/HomePages/HomePage";
 
 const router = createBrowserRouter([
   {
- 
     path: "/",
-    
     element: <Layout />,
     errorElement: <NotFoundPage />,
     children: [
-      { index: true,  element: <HomePage /> },
+      { index: true, element: <HomePage /> },
       { path: "searchpage", element: <SearchPage /> },
       { path: "mylibrary", element: <MyLibraryPage /> },
     ],
