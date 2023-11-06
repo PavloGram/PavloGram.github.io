@@ -1,4 +1,4 @@
-const API_KEY = process.env.sample.REACT_APP_API_KEYS;
+const API_KEY = process.env.REACT_APP_API_KEYS;
 const BASE_URL_QUERY = "https://api.themoviedb.org/3/search/movie";
 const BASE_URL_POPULAR = "https://api.themoviedb.org/3/trending/movie/week";
 // const gb = process.env.API_KEYS
