@@ -7,7 +7,6 @@ import searchValue from "../reducers/searchValue";
 import queueArray from "../reducers/queueArray";
 import watchedArray from "../reducers/watchedArray";
 import currentLibraryPage from "../reducers/currentLibraryPage";
-import currentIndexPage from "../reducers/currentIndexPage";
 
 export const store = configureStore({
   reducer: {
@@ -19,6 +18,6 @@ export const store = configureStore({
     queueArray: queueArray,
     watchedArray: watchedArray,
     currentLibraryPage: currentLibraryPage,
-    currentIndexPage: currentIndexPage,
+   
   },
 });
